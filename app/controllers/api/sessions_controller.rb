@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render :show
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: ["Invalid Credentials"], status: 401
     end
   end
 
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
       logout
       render json: "Successful logout!"
     else
-      render json: ["No User to Log Out"]
+      render json: ["No User to Log Out"], status: 404
     end
   end
 

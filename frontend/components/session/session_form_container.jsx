@@ -14,14 +14,21 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     formType: formType,
-    errors: state.errors
+    errors: state.errors.session
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  login: (user) => dispatch(login(user)),
-  signup: (user) => dispatch(signup(user))
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  let fn;
+  if (ownProps.match.path === "/login") {
+    fn = (user) => login(user);
+  } else if (ownProps.match.path === "/signup") {
+    fn = (user) => signup(user);
+  }
+  return {
+    processForm: (user) => dispatch(fn(user))
+  };
+};
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));

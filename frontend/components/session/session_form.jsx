@@ -21,11 +21,8 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.formType === 'login') {
-      this.props.login(this.state);
-    } else {
-      this.props.signup(this.state);
-    }
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
     this.setState({
       email: "",
       username: "",
@@ -35,6 +32,7 @@ class SessionForm extends React.Component {
 
   render () {
     let formType = this.props.formType;
+    let errors = this.props.errors;
     let linkType;
     let message;
     if (formType === 'SignUp') {
@@ -46,7 +44,16 @@ class SessionForm extends React.Component {
     }
     return (
       <div>
-        <form>
+        { errors.length !== 0 &&
+          <div>
+            <ul>
+              {
+                errors.map(error => <li>{error}</li>)
+              }
+            </ul>
+          </div>
+        }
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           { formType === 'SignUp' &&
             <div>
               <label>Email:
@@ -74,6 +81,7 @@ class SessionForm extends React.Component {
               onChange={(e) => this.handleChange(e, 'password')}
               />
           </label>
+          <br></br>
           <input type="submit" value={formType}/>
           <br></br>
           <Link to={linkType}>{message}</Link>
