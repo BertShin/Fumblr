@@ -12,7 +12,6 @@ const Root = ({store}) => (
       </div>
     </HashRouter>
   </Provider>
-
 );
 
 export default Root;

@@ -1,3 +1,64 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Shout Outs Google Fonts <3
+
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Mukta+Mahee|Sniglet|Sriracha|Text+Me+One');
+
+// font-family: 'Text Me One', sans-serif;
+// font-family: 'Mukta Mahee', sans-serif;
+// font-family: 'Faster One', cursive;
+// font-family: 'Sriracha', cursive;
+// font-family: 'Sniglet', cursive;
+
+.main-session {
+  display: flex;
+  height: 610px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+
+.login-logo {
+  font-family: 'Faster One', sans-serif;
+  height: 100px;
+  font-weight: 500;
+  font-size: 80px;
+  color: hsla(210%, 100%, 60%, 1);
+
+}
+
+.session-form {
+  // border: 2px solid hsla(196%, 100%, 28%, 1);
+  height: 150px;
+  width: 200px;
+  padding: 15px;
+}
+
+.errors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Mukta Mahee';
+  font-size: 12px;
+  color: hsla(224%, 100%, 78%, 1);
+}
+
+.session-form button {
+border: hidden;
+width: 188px;
+padding: 8px;
+text-align: center;
+font-size: 20px;
+font-family: 'Faster One';
+color: hsla(196%, 100%, 34%, 1);
+// margin: 4px 2px;
+cursor: pointer;
+}
+
+.session-form input {
+  padding: 10px 30px;
+  text-align: center;
+}

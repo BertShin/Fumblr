@@ -15,6 +15,12 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
+  }
+
   handleChange(e, type) {
     this.setState({ [type]: e.target.value });
   }
@@ -30,59 +36,61 @@ class SessionForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li className="errors" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render () {
     let formType = this.props.formType;
-    let errors = this.props.errors;
     let linkType;
     let message;
     if (formType === 'SignUp') {
       linkType = "/login";
-      message = "Already Signed Up??";
+      message = "Already Signed Up?";
     } else {
       linkType = "/signup";
-      message = "Need an Account?? Sign Up!";
+      message = "Need an Account? Sign Up!";
     }
     return (
-      <div>
-        { errors.length !== 0 &&
-          <div>
-            <ul>
-              {
-                errors.map(error => <li>{error}</li>)
-              }
-            </ul>
-          </div>
-        }
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+      <div className="main-session">
+        <h1 className="login-logo animated rollIn">fümblr</h1>
+        <form className="session-form" onSubmit={(e) => this.handleSubmit(e)}>
+          {this.renderErrors()}
+          <br></br>
           { formType === 'SignUp' &&
             <div>
-              <label>Email:
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={(e) => this.handleChange(e, 'email')}
-                  />
-              </label>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={(e) => this.handleChange(e, 'email')}
+                placeholder="Email"
+                />
               <br></br>
             </div>
           }
-          <label>Username:
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={(e) => this.handleChange(e, 'username')}
-              />
-          </label>
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={(e) => this.handleChange(e, 'username')}
+            placeholder="Username"
+            />
           <br></br>
-          <label>Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={(e) => this.handleChange(e, 'password')}
-              />
-          </label>
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={(e) => this.handleChange(e, 'password')}
+            placeholder="Password"
+            />
           <br></br>
-          <input type="submit" value={formType}/>
+          <button>{formType}</button>
           <br></br>
           <Link to={linkType}>{message}</Link>
         </form>
