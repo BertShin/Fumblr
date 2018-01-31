@@ -62,7 +62,8 @@ class SessionForm extends React.Component {
     return (
       <div className="main-session">
         <h1 className="login-logo animated rollIn">fümblr</h1>
-        <form className="session-form" onSubmit={(e) => this.handleSubmit(e)}>
+        <h3 className="sub-header animated jackInTheBox"> Your HQ for everything Sports </h3>
+        <form className="session-form animated fadeInUp" onSubmit={(e) => this.handleSubmit(e)}>
           {this.renderErrors()}
           <br></br>
           { formType === 'SignUp' &&
