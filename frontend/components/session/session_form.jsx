@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-
+import { Link, Redirect, NavLink } from 'react-router-dom';
+import PersonalPlugs from '../personal_plugs';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/dashboard');
     }
   }
 
@@ -36,7 +36,43 @@ class SessionForm extends React.Component {
     });
   }
 
+  handleGuest(e) {
+    this.setState({
+      username: "Guest",
+      password: 'albert'
+    });
+    const user = Object.assign({}, this.state);
+    this.props.errors = null;
+    this.props.processForm(user);
+  }
+
+  // handleGuest(e) {
+  //   e.preventDefault();
+  //   const date = new Date();
+  //   date = date.toString();
+  //   const number = date.slice(8, 10);
+  //   if (this.props.match.path === '/') {
+  //     this.setState({
+  //       email: `bestGuest${number}@aa.com`,
+  //       username: `Guest${number}`,
+  //       password: `albert${number}`
+  //     });
+  //   } else {
+  //     this.setState({
+  //       username: `Guest`,
+  //       password: `albert`
+  //     });
+  //   }
+  //   const user = Object.assign({}, this.state);
+  //   this.props.processForm(user);
+  // }
+
   renderErrors() {
+    if (this.props.errors === null) {
+      return (
+        []
+      );
+    }
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -54,15 +90,15 @@ class SessionForm extends React.Component {
     let message;
     if (formType === 'SignUp') {
       linkType = "/login";
-      message = "Already Signed Up?";
+      message = "Already Signed Up or Demo?";
     } else {
-      linkType = "/signup";
+      linkType = "";
       message = "Need an Account? Sign Up!";
     }
     return (
       <div className="main-session">
         <h1 className="login-logo animated rollIn">fümblr</h1>
-        <h3 className="sub-header animated jackInTheBox"> Your HQ for everything Sports </h3>
+        <h3 className="sub-header animated zoomInLeft"> Your HQ for everything Sports </h3>
         <form className="session-form animated fadeInUp" onSubmit={(e) => this.handleSubmit(e)}>
           {this.renderErrors()}
           <br></br>
@@ -93,8 +129,16 @@ class SessionForm extends React.Component {
           <br></br>
           <button>{formType}</button>
           <br></br>
-          <Link to={linkType}>{message}</Link>
+          { formType === 'Login' &&
+            <button onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
+          }
+          <NavLink
+            onClick={this.props.clearAllErrors()}
+            exact
+            to={linkType}
+            >{message}</NavLink>
         </form>
+        <PersonalPlugs />
       </div>
     );
   }

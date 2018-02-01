@@ -1,12 +1,12 @@
 import React from 'react';
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
-import { login, signup } from '../../actions/session_actions';
+import { login, signup, clearAllErrors } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   let formType;
-  if (ownProps.match.path === '/signup') {
+  if (ownProps.match.path === '/') {
     formType = 'SignUp';
   } else {
     formType = "Login";
@@ -22,11 +22,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let fn;
   if (ownProps.match.path === "/login") {
     fn = (user) => login(user);
-  } else if (ownProps.match.path === "/signup") {
+  } else if (ownProps.match.path === "/") {
     fn = (user) => signup(user);
   }
   return {
-    processForm: (user) => dispatch(fn(user))
+    processForm: (user) => dispatch(fn(user)),
+    clearAllErrors: () => dispatch(clearAllErrors())
   };
 };
 

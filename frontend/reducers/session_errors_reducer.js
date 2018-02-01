@@ -1,6 +1,7 @@
 import {
   RECEIVE_USER,
-  RECEIVE_ERRORS
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS
 } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
@@ -12,6 +13,8 @@ const SessionErrorsReducer = (state = [], action) => {
     case RECEIVE_ERRORS:
       return action.payload;
     case RECEIVE_USER:
+      return clearErrors;
+    case CLEAR_ERRORS:
       return clearErrors;
     default:
       return state;

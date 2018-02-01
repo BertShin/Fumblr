@@ -13,7 +13,7 @@
 
 .main-session {
   display: flex;
-  height: 610px;
+  height: 530px;
   align-items: center;
   justify-content: center;
   flex-flow: column wrap;
@@ -68,4 +68,39 @@ cursor: pointer;
 .session-form input {
   padding: 10px 30px;
   text-align: center;
+}
+
+
+//////////// Personal Plugs /////////
+
+.main-plug {
+  display: flex;
+  align-self: flex-end;
+  width: 100px;
+  height: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+#git {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg");
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+}
+
+#angel {
+  background-image: url("https://angel.co/images/shared/peace_large.jpg");
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+}
+
+#linked {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png");
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
 }
