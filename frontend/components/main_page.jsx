@@ -11,12 +11,12 @@ const MainPage = () => (
       <Switch>
         <AuthRoute exact path='/' component={SessionFormContainer}/>
         <AuthRoute exact path='/login' component={SessionFormContainer}/>
-        <ProtectedRoute path='/dashboard' component={TemporaryContainer} />
         <Redirect to="/login"/>
       </Switch>
     </header>
   </div>
 );
 // <ProtectedRoute path='/dashboard' component={NavBarContainer}/>
+// <ProtectedRoute path='/dashboard' component={TemporaryContainer} />
 
 export default MainPage;
