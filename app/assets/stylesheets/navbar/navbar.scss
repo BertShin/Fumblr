@@ -1,0 +1,110 @@
+// Stylings for NavBar //
+
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Mukta+Mahee|Sniglet|Sriracha|Text+Me+One');
+// font-family: 'Text Me One', sans-serif;
+// font-family: 'Mukta Mahee', sans-serif;
+// font-family: 'Faster One', cursive;
+// font-family: 'Sriracha', cursive;
+// font-family: 'Sniglet', cursive;
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  width: 100%;
+  height: 98px;
+  border-bottom: 2px solid rgba(0, 105, 144, 1);
+  background-color: rgba(175, 212, 255, 1);
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav {
+  margin-left: 25px;
+}
+
+.left-nav input {
+  margin-top: 4px;
+  margin-left: 4px;
+  text-indent: 20px;
+  padding: 11px;
+  width: 240px;
+}
+
+.fa-searchengin {
+  position: absolute;
+  top: 40px;
+  font-size: 20px;
+  left: 80px;
+}
+
+.left-nav p {
+  font-family: "Faster One";
+  font-size: 50px;
+  margin-right: 10px;
+  margin-bottom: 2px;
+  color: rgba(53, 145, 255, 1);
+  font-weight: 700px;
+}
+
+.right-nav {
+  padding-right: 19px;
+}
+
+.right-nav a {
+  height: 62px;
+  width: 50px;
+  background-size: 50px 62px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 12px;
+}
+
+.right-nav button {
+  height: 36px;
+  width: 36px;
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  padding-right: 4px;
+  margin: 10px;
+  cursor: pointer;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-elements/700/012_power-512.png");
+}
+
+
+
+#nba {
+  background-image: url("https://www.underconsideration.com/brandnew/archives/nba_logo_before_after.png");
+  display: inline-block;
+  height: 60px;
+  width: 29px;
+  background-size: 198px 71px;
+  background-position: -35px -5px;
+  border: hidden;
+  padding: 0px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+#nfl {
+  background-image: url("https://vignette.wikia.nocookie.net/looneytunes/images/4/49/NFL-logo.png/revision/latest?cb=20140711021414");
+}
+
+#tennis {
+  background-image: url("https://ccsu.co.uk/asset/Organisation/6469/tennis-logo.png?thumbnail_width=270&thumbnail_height=370&resize_type=ResizeFitAll");
+}
+
+#soccer {
+  background-image: url("https://openclipart.org/image/800px/svg_to_png/241330/Soccer-Logo.png");
+}
+
+#tumblr {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/43/Tumblr.svg");
+}

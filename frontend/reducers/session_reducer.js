@@ -1,6 +1,5 @@
 import {
-  RECEIVE_USER,
-  LOGOUT_USER
+  RECEIVE_USER
 } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
@@ -14,10 +13,15 @@ const SessionReducer = (state = nullUser, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_USER:
-      newState = merge({}, { currentUser: action.payload});
-      return newState;
-    case LOGOUT_USER:
-      return nullUser;
+      if (action.payload) {
+        newState = merge({}, { currentUser: action.payload.username });
+        console.log(action.payload);
+        return newState;
+      } else {
+        newState = merge({}, { currentUser: action.payload });
+        console.log(action.payload);
+        return newState;
+      }
     default:
       return state;
   }
