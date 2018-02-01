@@ -13,7 +13,7 @@
   position: fixed;
   align-items: center;
   width: 100%;
-  height: 98px;
+  height: 70px;
   border-bottom: 2px solid rgba(0, 105, 144, 1);
   background-color: rgba(175, 212, 255, 1);
 }
@@ -25,31 +25,39 @@
 }
 
 .left-nav {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .left-nav input {
   margin-top: 4px;
-  margin-left: 4px;
-  text-indent: 20px;
+  margin-left: 6px;
+  text-indent: 23px;
   padding: 11px;
   width: 240px;
 }
 
 .fa-searchengin {
   position: absolute;
-  top: 40px;
+  top: 27px;
   font-size: 20px;
-  left: 80px;
+  left: 89px;
 }
 
 .left-nav p {
   font-family: "Faster One";
   font-size: 50px;
-  margin-right: 10px;
+  margin-right: 13px;
   margin-bottom: 2px;
   color: rgba(53, 145, 255, 1);
   font-weight: 700px;
+  -webkit-transition: color 1.5s ease-out;
+  -moz-transition: color 1.5s ease-out;
+  -o-transition: color 1.5s ease-out;
+  transition: color 1.5s ease-out;
+}
+
+.left-nav P:hover {
+  color: purple;
 }
 
 .right-nav {
@@ -57,9 +65,9 @@
 }
 
 .right-nav a {
-  height: 62px;
-  width: 50px;
-  background-size: 50px 62px;
+  height: 54px;
+  width: 48px;
+  background-size: 48px 54px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 12px;
@@ -83,10 +91,10 @@
 #nba {
   background-image: url("https://www.underconsideration.com/brandnew/archives/nba_logo_before_after.png");
   display: inline-block;
-  height: 60px;
+  height: 52px;
   width: 29px;
-  background-size: 198px 71px;
-  background-position: -35px -5px;
+  background-size: 198px 60px;
+  background-position: -35px -4px;
   border: hidden;
   padding: 0px;
   margin-right: 10px;
