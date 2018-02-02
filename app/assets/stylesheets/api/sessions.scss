@@ -14,8 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column wrap;
-  height: 600px;
+  flex-flow: column;
+  height: 800px;
   width: 100%;
 
 }
@@ -110,7 +110,7 @@ cursor: pointer;
   border-radius: 10px;
   flex-direction: row-reverse;
   justify-content: space-around;
-  margin-top: 130px;
+  margin-top: 250px;
   margin-left: 30px;
 }
 
