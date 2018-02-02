@@ -12,16 +12,35 @@
 
 .main-session {
   display: flex;
-  height: 600px;
   align-items: center;
   justify-content: center;
   flex-flow: column wrap;
+  height: 600px;
+  width: 100%;
+
+}
+
+.selected {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.myVideo {
+  float: left;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .sub-header {
-  font-family: 'Mukta Mahee';
+  font-family: 'Helvetica';
   font-size: 20px;
-  color: rgba(145, 174, 255, 1);
+  font-weight: 600;
+  color: hsla(210%, 100%, 60%, 1);
   text-align: center;
 }
 
@@ -30,7 +49,7 @@
   font-family: 'Faster One', sans-serif;
   height: 100px;
   font-weight: 400;
-  font-size: 90px;
+  font-size: 95px;
   color: hsla(210%, 100%, 60%, 1);
 
 }
@@ -40,6 +59,7 @@
   height: 150px;
   width: 200px;
   padding: 15px;
+  font-family: 'Helvetica';
 }
 
 .errors {
@@ -47,59 +67,73 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Mukta Mahee';
   font-size: 12px;
-  color: hsla(224%, 100%, 78%, 1);
+  color: red;
+  margin-right: 17px;
 }
 
 .session-form button {
 border: hidden;
-width: 188px;
+background-color: rgba(53, 154, 255, 1);
+width: 189px;
 padding: 8px;
 text-align: center;
-font-size: 20px;
-font-family: 'Faster One';
-color: rgba(0, 105, 170, 1);
-// margin: 4px 2px;
+font-size: 14px;
+font-weight: bold;
+color: white;
+margin-top: 10px;
 cursor: pointer;
+}
+
+#demo {
+  margin-top: 2px;
 }
 
 .session-form input {
   padding: 10px 30px;
   text-align: center;
+  font-size: 11px;
+  font-family: 'Helvetica';
+
 }
+
 
 
 //////////// Personal Plugs /////////
 
 .main-plug {
   display: flex;
-  align-self: flex-end;
-  width: 100px;
-  height: 150px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-self: flex-start;
+  align-items: flex-end;
+  width: 180px;
+  height: 50px;
+  border-radius: 10px;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin-top: 130px;
+  margin-left: 30px;
 }
 
-
-#git {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg");
-  background-size: 40px 40px;
-  height: 40px;
-  width: 40px;
+.main-plug a {
+  color: hsla(210%, 100%, 60%, 1);
+  font-size: 50px;
+  -webkit-transition: color 1s ease-out;
+  -moz-transition: color 1s ease-out;
+  -o-transition: color 1s ease-out;
+  transition: color 1s ease-out;
 }
 
-#angel {
-  background-image: url("https://angel.co/images/shared/peace_large.jpg");
-  background-size: 40px 40px;
-  height: 40px;
-  width: 40px;
+.main-plug a:hover {
+  color: orange;
 }
 
-#linked {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png");
-  background-size: 40px 40px;
-  height: 40px;
-  width: 40px;
-}
+// .git {
+// }
+//
+// #angel {
+//
+// }
+//
+// #linked {
+//
+// }

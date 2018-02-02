@@ -21,7 +21,7 @@ class NavBar extends React.Component {
         <nav className='left-nav'>
           <ul>
             <p>F</p>
-            <span className="fab fa-searchengin"></span>
+            <span className="fas fa-search"></span>
             <input
               type="text"
               placeholder="SearchBarContainer here"

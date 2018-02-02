@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect, NavLink } from 'react-router-dom';
 import PersonalPlugs from '../personal_plugs';
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,7 @@ class SessionForm extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginSpeed = 110;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,14 +38,37 @@ class SessionForm extends React.Component {
     });
   }
 
+  // handleGuest(e) {
+  //   this.setState({
+  //     username: "Guest",
+  //     password: 'albert'
+  //   });
+  //   const user = Object.assign({}, this.state);
+  //   this.props.errors = null;
+  //   this.props.processForm(user);
+  // }
+
   handleGuest(e) {
-    this.setState({
-      username: "Guest",
-      password: 'albert'
-    });
-    const user = Object.assign({}, this.state);
-    this.props.errors = null;
-    this.props.processForm(user);
+    e.preventDefault();
+    this.demoLogin("username", "BestGuest", (
+      () => this.demoLogin("password", 'albertalbert', (
+        () => this.props.processForm(this.state)
+      ))
+    ));
+  }
+
+  demoLogin(field, DemoUser, cb) {
+    let textToType = "";
+    const typing = () => {
+      textToType = DemoUser.substring(0, textToType.length + 1);
+      this.setState({ [field]: textToType });
+      if (textToType.length === DemoUser.length) {
+        setTimeout(() => cb(), this.loginSpeed);
+      } else {
+        setTimeout(() => typing(), this.loginSpeed);
+      }
+    };
+    typing();
   }
 
   // handleGuest(e) {
@@ -83,26 +108,33 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+  // <div className="myVideo">
+  //   <iframe src="https://streamable.com/s/v668d/okjdmq">
+  //   </iframe>
+  // </div>
 
   render () {
     let formType = this.props.formType;
     let linkType;
     let message;
-    if (formType === 'SignUp') {
+    if (formType === 'Sign Up') {
       linkType = "/login";
-      message = "Already Signed Up or Demo?";
+      message = "Logging In or Try a Demo?";
     } else {
       linkType = "";
       message = "Need an Account? Sign Up!";
     }
     return (
       <div className="main-session">
-        <h1 className="login-logo animated rollIn">fümblr</h1>
-        <h3 className="sub-header animated zoomInLeft"> Your HQ for everything Sports </h3>
-        <form className="session-form animated fadeInUp" onSubmit={(e) => this.handleSubmit(e)}>
+        <video className="myVideo" autoPlay loop>
+          <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
+        </video>
+        <h1 className="login-logo animated rollIn">fümblr.</h1>
+        <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>
+        <form className="session-form animated fadeInDown" onSubmit={(e) => this.handleSubmit(e)}>
           {this.renderErrors()}
           <br></br>
-          { formType === 'SignUp' &&
+          { formType === 'Sign Up' &&
             <div>
               <input
                 type="text"
@@ -129,10 +161,13 @@ class SessionForm extends React.Component {
           <br></br>
           <button>{formType}</button>
           <br></br>
-          { formType === 'Login' &&
-            <button onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
+          { formType === 'Log In' &&
+            <button id="demo" onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
           }
+          <br></br>
+          <br></br>
           <NavLink
+            className="selected"
             onClick={this.props.clearAllErrors()}
             exact
             to={linkType}
