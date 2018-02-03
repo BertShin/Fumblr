@@ -1,6 +1,6 @@
 import {
   RECEIVE_USER
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 import merge from 'lodash/merge';
 
 const nullUser = {

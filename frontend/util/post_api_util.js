@@ -28,10 +28,3 @@ export const createPost = (post) => {
     data: { post: post }
   });
 };
-
-
-let data = {
-  title: 'Test post',
-  content_type: 'Text',
-  user_id: 1
-};
