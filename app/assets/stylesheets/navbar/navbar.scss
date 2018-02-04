@@ -6,16 +6,18 @@
 // font-family: 'Faster One', cursive;
 // font-family: 'Sriracha', cursive;
 // font-family: 'Sniglet', cursive;
+@import "../palette.scss";
 
 .main-nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
+  top: 0px;
   align-items: center;
   width: 100%;
   height: 70px;
-  border-bottom: 2px solid rgba(0, 105, 144, 1);
-  background-color: rgba(175, 212, 255, 1);
+  background-color: $blue;
+  box-shadow: 1px 4px lightgray;
 }
 
 .left-nav > ul,
@@ -49,7 +51,7 @@
   font-size: 50px;
   margin-right: 13px;
   margin-bottom: 2px;
-  color: rgba(53, 145, 255, 1);
+  color: $baby-blue;
   font-weight: 700px;
   -webkit-transition: color 1.5s ease-out;
   -moz-transition: color 1.5s ease-out;
@@ -58,7 +60,7 @@
 }
 
 .left-nav P:hover {
-  color: purple;
+  color: orange;
 }
 
 .right-nav {

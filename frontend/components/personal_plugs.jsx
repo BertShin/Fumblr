@@ -20,7 +20,7 @@ const PersonalPlugs = () => {
       <a
         target="_blank"
         href="https://angel.co/bertshin?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar">
-      <FaAngellist/>
+      <FaAngellist id="angel"/>
     </a>
     </div>
   );

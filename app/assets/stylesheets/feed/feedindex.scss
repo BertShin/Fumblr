@@ -1,0 +1,60 @@
+// Temp Post Form Styling //
+
+.post-form {
+  height: 300px;
+}
+
+.main-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 44%;
+  margin: 100px auto;
+}
+
+.feed-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  border: 2px solid black;
+
+}
+
+.feed-index-item {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica;
+  width: 70%;
+  height: 600px;
+  border: 2px solid black;
+
+}
+
+.feed-index-item img {
+  height: 500px;
+  align-self: center;
+  width: 95%;
+}
+
+.fii-title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+}
+
+.fii-description {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.fii-button {
+  margin-top: 5px;
+  align-self: flex-end;
+  padding: 5px;
+  border: 1px solid gray;
+}

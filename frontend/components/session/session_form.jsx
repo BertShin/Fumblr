@@ -31,11 +31,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    this.setState({
-      email: "",
-      username: "",
-      password: ""
-    });
+    // this.setState({
+    //   email: "",
+    //   username: "",
+    //   password: ""
+    // });
   }
 
   // handleGuest(e) {
@@ -135,15 +135,13 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <br></br>
           { formType === 'Sign Up' &&
-            <div>
               <input
+                className='email'
                 type="text"
                 value={this.state.email}
                 onChange={(e) => this.handleChange(e, 'email')}
                 placeholder="Email"
                 />
-              <br></br>
-            </div>
           }
           <input
             type="text"
@@ -151,13 +149,13 @@ class SessionForm extends React.Component {
             onChange={(e) => this.handleChange(e, 'username')}
             placeholder="Username"
             />
-          <br></br>
           <input
             type="password"
             value={this.state.password}
             onChange={(e) => this.handleChange(e, 'password')}
             placeholder="Password"
             />
+          <br></br>
           <br></br>
           <button>{formType}</button>
           <br></br>

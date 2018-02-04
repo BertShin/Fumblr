@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Shout Outs Google Fonts <3
 @import url('https://fonts.googleapis.com/css?family=Faster+One|Mukta+Mahee|Sniglet|Sriracha|Text+Me+One');
+@import "../palette.scss";
 
 // font-family: 'Text Me One', sans-serif;
 // font-family: 'Mukta Mahee', sans-serif;
@@ -15,7 +16,7 @@
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  height: 800px;
+  height: 900px;
   width: 100%;
 
 }
@@ -24,6 +25,7 @@
   color: white;
   text-align: center;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .myVideo {
@@ -36,30 +38,65 @@
   min-height: 100%;
 }
 
+.login-logo {
+  font-family: 'Faster One', sans-serif;
+  text-align: center;
+  height: 125px;
+  font-weight: 400;
+  font-size: 115px;
+  color: $blue;
+}
+
 .sub-header {
   font-family: 'Helvetica';
-  font-size: 20px;
-  font-weight: 600;
-  color: hsla(210%, 100%, 60%, 1);
+  height: 40px;
+  font-size: 22px;
+  font-weight: 700;
+  color: $blue;
   text-align: center;
 }
 
 
-.login-logo {
-  font-family: 'Faster One', sans-serif;
-  height: 100px;
-  font-weight: 400;
-  font-size: 95px;
-  color: hsla(210%, 100%, 60%, 1);
-
-}
 
 .session-form {
-  // border: 2px solid hsla(196%, 100%, 28%, 1);
-  height: 150px;
-  width: 200px;
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+  height: 400px;
+  width: 400px;
   font-family: 'Helvetica';
+}
+
+.session-form input {
+  width: 80%;
+  padding: 17px;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Helvetica';
+}
+
+.session-form button {
+  border: hidden;
+  border-radius: 5px;
+  background-color: $blue;
+  width: 60%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+
+.session-form button:hover {
+  background-color: $indigo;
+
 }
 
 .errors {
@@ -67,34 +104,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 12px;
+  font-size: 20px;
   color: red;
   margin-right: 17px;
 }
 
-.session-form button {
-border: hidden;
-background-color: rgba(53, 154, 255, 1);
-width: 189px;
-padding: 8px;
-text-align: center;
-font-size: 14px;
-font-weight: bold;
-color: white;
-margin-top: 10px;
-cursor: pointer;
-}
-
 #demo {
-  margin-top: 2px;
-}
-
-.session-form input {
-  padding: 10px 30px;
-  text-align: center;
-  font-size: 11px;
-  font-family: 'Helvetica';
-
 }
 
 
@@ -103,37 +118,32 @@ cursor: pointer;
 
 .main-plug {
   display: flex;
+  position: fixed;
+  bottom: 50px;
   align-self: flex-start;
   align-items: flex-end;
-  width: 180px;
-  height: 50px;
+  width: 200px;
+  height: 70px;
   border-radius: 10px;
   flex-direction: row-reverse;
   justify-content: space-around;
-  margin-top: 225px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .main-plug a {
-  color: hsla(210%, 100%, 60%, 1);
-  font-size: 50px;
-  -webkit-transition: color 1s ease-out;
-  -moz-transition: color 1s ease-out;
-  -o-transition: color 1s ease-out;
-  transition: color 1s ease-out;
+  color: $blue;
+  font-size: 60px;
+  -webkit-transition: color .8s ease-in;
+  -moz-transition: color .8s ease-in;
+  -o-transition: color .8s ease-in;
+  transition: color .8s ease-in;
 }
 
 .main-plug a:hover {
   color: orange;
 }
 
-// .git {
-// }
-//
-// #angel {
-//
-// }
-//
-// #linked {
-//
-// }
+#angel {
+  height: 56px;
+  width: 50px;
+}
