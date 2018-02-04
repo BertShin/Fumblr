@@ -35,7 +35,7 @@
   margin-left: 6px;
   text-indent: 23px;
   padding: 11px;
-  width: 240px;
+  width: 300px;
 }
 
 .fa-search {
@@ -48,10 +48,10 @@
 
 .left-nav p {
   font-family: "Faster One";
-  font-size: 50px;
+  font-size: 55px;
   margin-right: 13px;
   margin-bottom: 2px;
-  color: $baby-blue;
+  color: $royal-blue;
   font-weight: 700px;
   -webkit-transition: color 1.5s ease-out;
   -moz-transition: color 1.5s ease-out;
@@ -60,7 +60,7 @@
 }
 
 .left-nav P:hover {
-  color: orange;
+  color: $orange;
 }
 
 .right-nav {
@@ -79,10 +79,9 @@
 .right-nav button {
   height: 36px;
   width: 36px;
-  background-size: 36px 36px;
-  background-repeat: no-repeat;
+  background-size: 38px 38px;
   background-position: center;
-  border-radius: 20px;
+  border-radius: 50px;
   padding-right: 4px;
   margin: 10px;
   cursor: pointer;
@@ -94,10 +93,10 @@
 #nba {
   background-image: url("https://www.underconsideration.com/brandnew/archives/nba_logo_before_after.png");
   display: inline-block;
-  height: 52px;
+  height: 55px;
   width: 29px;
-  background-size: 198px 60px;
-  background-position: -35px -4px;
+  background-size: 200px 67px;
+  background-position: -36px -6px;
   border: hidden;
   padding: 0px;
   margin-right: 10px;

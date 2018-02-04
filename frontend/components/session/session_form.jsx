@@ -31,22 +31,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // this.setState({
-    //   email: "",
-    //   username: "",
-    //   password: ""
-    // });
   }
-
-  // handleGuest(e) {
-  //   this.setState({
-  //     username: "Guest",
-  //     password: 'albert'
-  //   });
-  //   const user = Object.assign({}, this.state);
-  //   this.props.errors = null;
-  //   this.props.processForm(user);
-  // }
 
   handleGuest(e) {
     e.preventDefault();
@@ -71,26 +56,6 @@ class SessionForm extends React.Component {
     typing();
   }
 
-  // handleGuest(e) {
-  //   e.preventDefault();
-  //   const date = new Date();
-  //   date = date.toString();
-  //   const number = date.slice(8, 10);
-  //   if (this.props.match.path === '/') {
-  //     this.setState({
-  //       email: `bestGuest${number}@aa.com`,
-  //       username: `Guest${number}`,
-  //       password: `albert${number}`
-  //     });
-  //   } else {
-  //     this.setState({
-  //       username: `Guest`,
-  //       password: `albert`
-  //     });
-  //   }
-  //   const user = Object.assign({}, this.state);
-  //   this.props.processForm(user);
-  // }
 
   renderErrors() {
     if (this.props.errors === null) {
@@ -108,10 +73,6 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
-  // <div className="myVideo">
-  //   <iframe src="https://streamable.com/s/v668d/okjdmq">
-  //   </iframe>
-  // </div>
 
   render () {
     let formType = this.props.formType;
@@ -121,14 +82,23 @@ class SessionForm extends React.Component {
       linkType = "/login";
       message = "Logging In or Try a Demo?";
     } else {
-      linkType = "";
+      linkType = "/";
       message = "Need an Account? Sign Up!";
     }
+    setTimeout(function(){
+      document.getElementById("myVideo").play();
+    }, 5000);
     return (
       <div className="main-session">
-        <video className="myVideo" autoPlay loop>
-          <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
-        </video>
+
+        { setTimeout(function(){
+          document.getElementById("myVideo").play();
+          }, 1900) &&
+          <video id="myVideo" loop>
+            <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
+          </video>
+        }
+
         <h1 className="login-logo animated rollIn">fümblr.</h1>
         <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>
         <form className="session-form animated fadeInDown" onSubmit={(e) => this.handleSubmit(e)}>
@@ -164,12 +134,12 @@ class SessionForm extends React.Component {
           }
           <br></br>
           <br></br>
-          <NavLink
+          <Link
             className="selected"
             onClick={this.props.clearAllErrors()}
             exact
             to={linkType}
-            >{message}</NavLink>
+            >{message}</Link>
         </form>
         <PersonalPlugs />
       </div>

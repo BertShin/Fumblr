@@ -7,6 +7,7 @@ import { fetchPosts, fetchPost, deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   posts: Object.values(state.entities.posts),
+  currentUser: state.session.currentUser.id
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

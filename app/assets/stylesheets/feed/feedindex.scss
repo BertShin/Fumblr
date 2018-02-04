@@ -1,25 +1,28 @@
 // Temp Post Form Styling //
+@import "../palette.scss";
 
 .post-form {
   height: 300px;
+  width: 100%;
+  border: 2px solid $purple;
+  text-align: center;
 }
 
 .main-index {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 2px solid black;
-  width: 44%;
+  border: 3px solid $blue;
+  width: 50%;
   margin: 100px auto;
 }
 
 .feed-items {
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
-  align-items: center;
-  width: 95%;
-  border: 2px solid black;
+  width: 99%;
+  border: 3px solid $orange;
 
 }
 
@@ -30,31 +33,73 @@
   width: 70%;
   height: 600px;
   border: 2px solid black;
+}
+// END FEED CONTAINERS //
 
+.fii-profile {
 }
 
+.fii-button {
+  margin-top: 5px;
+  margin-right: 5px;
+  align-self: flex-end;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+// START TEXT //
+
 .feed-index-item img {
-  height: 500px;
+  height: 450px;
   align-self: center;
   width: 95%;
+  margin-bottom: 2px;
+  border: 1px solid gray;
 }
 
 .fii-title {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 500;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 }
 
 .fii-description {
   font-size: 20px;
   text-align: left;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
-.fii-button {
-  margin-top: 5px;
-  align-self: flex-end;
-  padding: 5px;
-  border: 1px solid gray;
+.fii-text-content {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  width: 95%;
+  padding-top: 100px;
+}
+
+
+
+// START QUOTE //
+
+.fii-quote {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica;
+  width: 70%;
+  height: 450px;
+  border: 2px solid black;
+}
+
+
+
+.fii-quote-content {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  width: 95%;
+  height: 200px;
+  font-style: italic;
+  padding-top: 100px;
 }

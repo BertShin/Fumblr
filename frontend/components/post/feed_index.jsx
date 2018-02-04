@@ -13,14 +13,19 @@ class FeedIndex extends React.Component {
   }
 
   render() {
-    const { fetchPost, deletePost } = this.props;
+    const { fetchPost, deletePost, currentUser } = this.props;
     const posts = this.props.posts;
     return (
       <div className="main-index">
         <p className="post-form"> Post Form Will go Here </p>
         <ul className="feed-items">
           {
-            posts.map(post => <FeedIndexItem user={post.user_id} post={post} key={post.post_id} deletePost={deletePost}/>)
+            posts.map(post => <FeedIndexItem
+              currentUser={currentUser}
+              user={post.user_id}
+              post={post}
+              key={post.post_id}
+              deletePost={deletePost}/>)
           }
         </ul>
       </div>
