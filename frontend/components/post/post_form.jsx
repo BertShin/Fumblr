@@ -1,5 +1,6 @@
 import React from 'react';
 import TextForm from './text_form';
+import PhotoForm from './photo_form';
 import MdText from 'react-icons/lib/md/textsms';
 import FaQuote from "react-icons/lib/fa/quote-right";
 import MdPhoto from "react-icons/lib/md/add-a-photo";
@@ -71,6 +72,14 @@ class PostForm extends React.Component {
             errors={errors}
             />
           <button className="post-buttons"onClick={() => this.openModal("photoVisible")}><MdPhoto /> <h4>Photo</h4></button>
+          <PhotoForm
+            isOpen={this.state.photoVisible}
+            closeModal={() => this.closeModal("photoVisible")}
+            ownProps={ownProps}
+            createPost={createPost}
+            currentUser={currentUser}
+            errors={errors}
+            />
           <button className="post-buttons"onClick={() => this.openModal("videoVisible")}><MdVideo /> <h4>Video</h4></button>
 
       </section>

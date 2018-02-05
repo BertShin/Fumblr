@@ -106,7 +106,7 @@ class TextForm extends React.Component {
                 />
             }
             <section className="modal-buttons">
-              <button onClick={(e) => this.handleSubmit(e)}>Post!</button>
+              <button onClick={(e) => this.handleSubmit(e)}>Post</button>
               <button onClick={(e) => this.handleClose(e)}>Cancel</button>
             </section>
           </form>
