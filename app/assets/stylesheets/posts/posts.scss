@@ -1,0 +1,80 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "../palette.scss";
+
+// .postzoomInLeft {
+//   position: static;
+//   -webkit-animation-name: zoomInLeft;
+//   animation-delay: .5s;
+//   animation-name: zoomInLeft;
+// }
+
+#currentUser-profile {
+  display: flex;
+  margin-right: 90px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 110px;
+  width: 110px;
+}
+
+
+.main-post-form {
+  // border: 5px solid $blue-green;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  margin-left: 26%;
+  height: 180px;
+  width: 47%;
+  text-align: center;
+}
+
+.group-post-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  border: 2px solid gray;
+  box-shadow: -2px 7px 5px gray;
+  border-radius: 10px;
+}
+
+.post-buttons {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 85px;
+  color: $blue;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition: color 1s ease-out;
+  -moz-transition: color 1s ease-out;
+  -o-transition: color 1s ease-out;
+  transition: color 1s ease-out;
+}
+
+.post-buttons:hover {
+  color: $orange;
+}
+
+
+.post-buttons h4 {
+  font-family: Helvetica;
+  color: $orange;
+  font-size: 30px;
+  align-self: center;
+  margin-top: 5px;
+  margin-left: 8px;
+  -webkit-transition: color 1s ease-out;
+  -moz-transition: color 1s ease-out;
+  -o-transition: color 1s ease-out;
+  transition: color 1s ease-out;
+}
+
+.post-buttons h4:hover {
+  color: $blue;
+}

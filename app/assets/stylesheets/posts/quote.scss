@@ -1,0 +1,29 @@
+// START QUOTE //
+@import "../palette.scss";
+
+
+// .fii-quote {
+//   display: flex;
+//   flex-direction: column;
+//   font-family: Helvetica;
+//   width: 70%;
+//   height: 450px;
+//   border: 2px solid black;
+// }
+
+.fii-quote-content {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  font-style: italic;
+  padding: 20px;
+}
+
+.fii-quote-author {
+  font-size: 15px;
+  text-align: left;
+  margin-left: 30px;
+  padding-top: 5px;
+  color: gray;
+}

@@ -28,9 +28,9 @@ class Post < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  def assign_user_id
-    @user = User.find_by(session_token: session[:session_token])
-    self.user_id = @user.id
-  end
+  # def assign_user_id
+  #   @user = User.find_by(session_token: session[:session_token])
+  #   self.user_id = @user.id
+  # end
 
 end

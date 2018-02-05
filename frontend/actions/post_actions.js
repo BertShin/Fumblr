@@ -3,7 +3,8 @@ import * as PostAPIUtil from "../util/post_api_util";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const DELETE_POST = "DELETE_POST";
-
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 const receivePosts = (posts) => ({
   type: RECEIVE_POSTS,
@@ -20,6 +21,14 @@ const destroyPost = (post) => ({
   payload: post.id
 });
 
+const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  payload: errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const fetchPosts = () => dispatch => (
   PostAPIUtil.fetchPosts().then((serverPosts) => dispatch(receivePosts(serverPosts)))
@@ -30,9 +39,17 @@ export const fetchPost = postId => dispatch => (
 );
 
 export const createPost = post => dispatch => (
-  PostAPIUtil.createPost(post).then(serverPost => dispatch(receivePost(serverPost)))
+  PostAPIUtil.createPost(post).then(serverPost => (
+    dispatch(receivePost(serverPost))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 );
 
 export const deletePost = postId => dispatch => (
-  PostAPIUtil.deletePost(postId).then(serverPost => dispatch(destroyPost(serverPost)))
+  PostAPIUtil.deletePost(postId).then(serverPost => (
+    dispatch(destroyPost(serverPost))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 );

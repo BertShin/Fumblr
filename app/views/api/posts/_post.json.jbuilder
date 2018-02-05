@@ -7,4 +7,5 @@ json.set! post.id do
   json.description post.description
   json.image_url post.image_url
   json.likes post.likes
+  json.user_image post.user.image_url
 end

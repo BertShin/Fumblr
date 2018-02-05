@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   // <SearchBarContainer />
   render () {
     return (
-      <div className="main-nav">
+      <div id="main-nav" className="animated navfadeInDown">
         <nav className='left-nav'>
           <ul>
             <p>F</p>

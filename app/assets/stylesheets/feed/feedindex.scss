@@ -1,105 +1,71 @@
 // Temp Post Form Styling //
 @import "../palette.scss";
 
-.post-form {
-  height: 300px;
-  width: 100%;
-  border: 2px solid $purple;
-  text-align: center;
-}
+
+// .mainfadeInUp {
+//   -webkit-animation-name: fadeInUp;
+//   animation-name: fadeInUp;
+//   animation-delay: .3s;
+// }
 
 .main-index {
+  // border: 3px solid $royal-blue;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  border: 3px solid $blue;
-  width: 50%;
-  margin: 100px auto;
+  flex-direction: column-reverse;
+  width: 48%;
+  margin: 0 auto;
 }
 
-.feed-items {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  width: 99%;
-  border: 3px solid $orange;
-
-}
 
 .feed-index-item {
+  // border: 2px solid black;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   font-family: Helvetica;
+  width: 99%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.content {
+  border: 2px solid gray;
+  display: flex;
+  margin-right: 35px;
+  margin-bottom: 20px;
+  flex-direction: column;
   width: 70%;
-  height: 600px;
-  border: 2px solid black;
-}
-// END FEED CONTAINERS //
-
-.fii-profile {
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px gray;
 }
 
-.fii-button {
-  margin-top: 5px;
-  margin-right: 5px;
-  align-self: flex-end;
-  padding: 5px;
-  border: 1px solid gray;
-}
-
-// START TEXT //
-
-.feed-index-item img {
-  height: 450px;
-  align-self: center;
-  width: 95%;
-  margin-bottom: 2px;
-  border: 1px solid gray;
+#fii-profile {
+  border: 1px solid black;
+  display: flex;
+  align-self: flex-start;
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 25px;
 }
 
 .fii-title {
-  font-size: 35px;
+  line-height: 1;
+  font-size: 30px;
   font-weight: 500;
   text-align: center;
-  padding: 15px;
+  padding: 24px;
+  color: gray;
 }
 
-.fii-description {
-  font-size: 20px;
-  text-align: left;
-  margin-left: 15px;
+.fii-buttons {
+  align-self: flex-end;
+  display: inline-flex;
+  width: 100px;
+  height: 30px;
 }
 
-.fii-text-content {
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
-  width: 95%;
-  padding-top: 100px;
-}
-
-
-
-// START QUOTE //
-
-.fii-quote {
-  display: flex;
-  flex-direction: column;
-  font-family: Helvetica;
-  width: 70%;
-  height: 450px;
-  border: 2px solid black;
-}
-
-
-
-.fii-quote-content {
-  font-size: 32px;
-  font-weight: 600;
-  text-align: center;
-  width: 95%;
-  height: 200px;
-  font-style: italic;
-  padding-top: 100px;
+.fii-buttons button {
+  border: hidden;
+  padding: 5px;
 }

@@ -5,6 +5,7 @@ import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import TemporaryContainer from './temp_comp_container';
 import FeedIndexContiner from './post/feed_index_container';
+import PostFormContainer from './post/post_form_container';
 
 
 const MainPage = () => (
@@ -13,6 +14,7 @@ const MainPage = () => (
       <AuthRoute exact path='/' component={SessionFormContainer}/>
       <AuthRoute exact path='/login' component={SessionFormContainer}/>
       <ProtectedRoute path='/dashboard' component={NavBarContainer}/>
+      <ProtectedRoute path='/dashboard' component={PostFormContainer}/>
       <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
     </header>
   </div>

@@ -16,13 +16,12 @@ class FeedIndex extends React.Component {
     const { fetchPost, deletePost, currentUser } = this.props;
     const posts = this.props.posts;
     return (
-      <div className="main-index">
-        <p className="post-form"> Post Form Will go Here </p>
-        <ul className="feed-items">
+      <div>
+        <ul className="main-index animated mainfadeInUp">
           {
             posts.map(post => <FeedIndexItem
               currentUser={currentUser}
-              user={post.user_id}
+              user={post.user_image}
               post={post}
               key={post.post_id}
               deletePost={deletePost}/>)
