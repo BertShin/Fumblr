@@ -1,15 +1,15 @@
 import React from 'react';
+import GiphysSearchContainer from '../giphys/giphys_search_container';
 
 
-class TextForm extends React.Component {
+class GifForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       title: "",
-      content: "",
       description: "",
-      content_type: this.props.content_type,
+      image_url: "",
+      content_type: "GIF",
       user_id: this.props.currentUser.id
     };
 
@@ -17,7 +17,6 @@ class TextForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
-
 
   handleChange(e, type) {
     this.setState({ [type]: e.target.value });
@@ -59,15 +58,6 @@ class TextForm extends React.Component {
   }
 
   render () {
-    let contentPhrase;
-    let placeHolder;
-    if (this.props.content_type === 'Quote') {
-      contentPhrase = "...To Score or Not to Score..";
-      placeHolder = "This Quote's Author";
-    } else {
-      contentPhrase = "Whats on your Mind??";
-      placeHolder = "Optional Description of your post";
-    }
     if (this.props.isOpen === false) {
       return null;
     } else {
@@ -83,23 +73,21 @@ class TextForm extends React.Component {
               onChange={(e) => this.handleChange(e, 'title')}
               placeholder="Title..."
               />
-            <textarea
-              className="modal-content"
-              value={this.state.content}
-              onChange={(e) => this.handleChange(e, 'content')}
-              placeholder={contentPhrase}
+            <input
+              className="modal-url"
+              type="text"
+              value={this.state.image_url}
+              placeholder="Attach an IMG or GIF?"
+              onChange={(e) => this.handleChange(e, 'image_url')}
               />
             <input
               className="modal-description"
               type="text"
               value={this.state.description}
               onChange={(e) => this.handleChange(e, 'description')}
-              placeholder={placeHolder}
+              placeholder="Optional Description"
               />
-            <section className="modal-buttons">
-              <button onClick={(e) => this.handleSubmit(e)}>Post</button>
-              <button onClick={(e) => this.handleClose(e)}>Cancel</button>
-            </section>
+            <GiphysSearchContainer />
           </form>
         </div>
       );
@@ -107,13 +95,4 @@ class TextForm extends React.Component {
   }
 }
 
-// { this.props.content_type === "Text" &&
-//   <input
-//     className="modal-url"
-//     type="text"
-//     value={this.state.image_url}
-//     placeholder="Attach an IMG or GIF?"
-//     onChange={(e) => this.handleChange(e, 'image_url')}
-//     />
-// }
-export default TextForm;
+export default GifForm;

@@ -15,6 +15,11 @@ class Api::UsersController < ApplicationController
     render "/api/users/show"
   end
 
+  def index
+    @users = User.all
+    render "/api/users/index"
+  end
+
   # def edit
   #   @user = User.find_by(id: params[:id])
   #   render :edit

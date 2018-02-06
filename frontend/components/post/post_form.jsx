@@ -1,10 +1,12 @@
 import React from 'react';
 import TextForm from './text_form';
 import PhotoForm from './photo_form';
+import GifForm from './gif_form';
 import MdText from 'react-icons/lib/md/textsms';
 import FaQuote from "react-icons/lib/fa/quote-right";
 import MdPhoto from "react-icons/lib/md/add-a-photo";
-import MdVideo from "react-icons/lib/md/ondemand-video";
+import MdGif from "react-icons/lib/md/gif";
+import { Link } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -13,8 +15,9 @@ class PostForm extends React.Component {
     this.state = {
       textVisible: false,
       quoteVisible: false,
-      videoVisible: false,
-      photoVisible: false
+      gifVisible: false,
+      photoVisible: false,
+      userVisible: false,
     };
   }
 
@@ -22,8 +25,9 @@ class PostForm extends React.Component {
     this.setState({
       textVisible: false,
       quoteVisible: false,
-      videoVisible: false,
-      photoVisible: false
+      gifVisible: false,
+      photoVisible: false,
+      userVisible: false
     });
   }
 
@@ -43,12 +47,14 @@ class PostForm extends React.Component {
 
   render() {
     const { ownProps, createPost, currentUser } = this.props;
-    const modalVisible = this.state.modalVisible;
     const errors = this.props.errors;
     return (
       <div className="main-post-form animated postzoomInLeft">
         <section>
-          <img id="currentUser-profile" src={currentUser.image_url} />
+          <img
+            onClick={() => this.openModal("userVisible")}
+            id="currentUser-profile"
+            src={currentUser.image_url} />
         </section>
         <section className="group-post-buttons">
           <button className="post-buttons"onClick={() => this.openModal("textVisible")}><MdText/> <h4>Text</h4></button>
@@ -80,8 +86,14 @@ class PostForm extends React.Component {
             currentUser={currentUser}
             errors={errors}
             />
-          <button className="post-buttons"onClick={() => this.openModal("videoVisible")}><MdVideo /> <h4>Video</h4></button>
-
+          <button className="gif-button" onClick={() => this.openModal("gifVisible")}><MdGif /></button>
+          <GifForm
+            isOpen={this.state.gifVisible}
+            closeModal={() => this.closeModal("gifVisible")}
+            ownProps={ownProps}
+            currentUser={currentUser}
+            errors={errors}
+            />
       </section>
       </div>
     );

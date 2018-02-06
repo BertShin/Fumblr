@@ -14,13 +14,12 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  // <SearchBarContainer />
   render () {
     return (
       <div id="main-nav" className="animated navfadeInDown">
         <nav className='left-nav'>
           <ul>
-            <p>F</p>
+            <a href="/#"><p>F</p></a>
             <span className="fas fa-search"></span>
             <input
               type="text"
