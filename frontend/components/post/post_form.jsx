@@ -91,6 +91,7 @@ class PostForm extends React.Component {
             isOpen={this.state.gifVisible}
             closeModal={() => this.closeModal("gifVisible")}
             ownProps={ownProps}
+            createPost={createPost}
             currentUser={currentUser}
             errors={errors}
             />

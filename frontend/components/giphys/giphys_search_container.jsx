@@ -5,11 +5,13 @@ import GiphysSearch from './giphys_search';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  giphys: state.giphys
+  giphys: state.giphys,
+  handleImg: ownProps.handleImg,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchSearchGiphys: (searchTerm) => dispatch(fetchSearchGiphys(searchTerm))
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GiphysSearch);

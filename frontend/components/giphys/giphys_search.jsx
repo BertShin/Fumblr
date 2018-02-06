@@ -29,7 +29,7 @@ class GiphySearch extends React.Component {
 
 
   render () {
-    let { giphys } = this.props;
+    let { giphys, handleImg } = this.props;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -45,7 +45,7 @@ class GiphySearch extends React.Component {
           <button>Search</button>
         </form>
         <br></br>
-        <GiphysIndex giphys={giphys} />
+        <GiphysIndex giphys={giphys} handleImg={handleImg} />
       </div>
     );
   }

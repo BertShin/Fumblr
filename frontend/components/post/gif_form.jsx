@@ -12,11 +12,18 @@ class GifForm extends React.Component {
       content_type: "GIF",
       user_id: this.props.currentUser.id
     };
-
+    this.handleImg = this.handleImg.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
+
+  handleImg(e) {
+    this.setState({
+      image_url: e.target.src
+    });
+  }
+
 
   handleChange(e, type) {
     this.setState({ [type]: e.target.value });
@@ -36,6 +43,7 @@ class GifForm extends React.Component {
       title: "",
       content: "",
       description: "",
+      image_url: "",
     });
     this.props.closeModal();
   }
@@ -58,6 +66,7 @@ class GifForm extends React.Component {
   }
 
   render () {
+    const handleImg = this.handleImg;
     if (this.props.isOpen === false) {
       return null;
     } else {
@@ -87,7 +96,11 @@ class GifForm extends React.Component {
               onChange={(e) => this.handleChange(e, 'description')}
               placeholder="Optional Description"
               />
-            <GiphysSearchContainer />
+            <section className="modal-buttons">
+              <button onClick={(e) => this.handleSubmit(e)}>Post</button>
+              <button onClick={(e) => this.handleClose(e)}>Cancel</button>
+            </section>
+            <GiphysSearchContainer handleImg={handleImg}/>
           </form>
         </div>
       );

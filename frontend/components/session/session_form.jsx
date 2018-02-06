@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
             <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
           </video>
         }
-        
+
         <h1 className="login-logo animated rollIn">fümblr.</h1>
         <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>
         <form className="session-form animated fadeInDown" onSubmit={(e) => this.handleSubmit(e)}>
@@ -131,12 +131,12 @@ class SessionForm extends React.Component {
           }
           <br></br>
           <br></br>
-          <Link
+          <NavLink
             className="selected"
             onClick={this.props.clearAllErrors()}
             exact
             to={linkType}
-            >{message}</Link>
+            >{message}</NavLink>
         </form>
         <PersonalPlugs />
       </div>
