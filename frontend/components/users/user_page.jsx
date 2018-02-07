@@ -4,6 +4,7 @@ import UserFeedItem from './user_feed_item';
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
 
@@ -16,7 +17,7 @@ class UserPage extends React.Component {
       return (
         <div>
           <section className="backdrop" onClick={this.props.closeModal}></section>
-          <body className="user-modal">
+          <section className="user-modal">
             <section className="user-backdrop">
               <p>{this.props.username}</p>
               <img
@@ -34,7 +35,7 @@ class UserPage extends React.Component {
                   }
                 </ul>
             </section>
-          </body>
+          </section>
         </div>
       );
     }

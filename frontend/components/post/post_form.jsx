@@ -25,9 +25,6 @@ class PostForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentWillMount() {
-    Modal.setAppElement('body');
-  }
 
   componentWillUnmount() {
     this.setState({
