@@ -80,13 +80,13 @@ class GifForm extends React.Component {
               type="text"
               value={this.state.title}
               onChange={(e) => this.handleChange(e, 'title')}
-              placeholder="Title..."
+              placeholder="...A title for your Giphy!"
               />
             <input
               className="modal-url"
               type="text"
               value={this.state.image_url}
-              placeholder="Attach an IMG or GIF?"
+              placeholder="Just click a Giphy to paste here!"
               onChange={(e) => this.handleChange(e, 'image_url')}
               />
             <input
@@ -94,7 +94,7 @@ class GifForm extends React.Component {
               type="text"
               value={this.state.description}
               onChange={(e) => this.handleChange(e, 'description')}
-              placeholder="Optional Description"
+              placeholder="Optional Description of your Giphy"
               />
             <section className="modal-buttons">
               <button onClick={(e) => this.handleSubmit(e)}>Post</button>

@@ -31,20 +31,15 @@ class GiphySearch extends React.Component {
   render () {
     let { giphys, handleImg } = this.props;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <h1>Pick a Gif to Post!</h1>
-          </label>
-          <br></br>
+      <div className="main-giphy-search">
+        <section className='giphy-search-field'>
           <input
             type="text"
-            value={this.state.searchTerm}
+            placeholder={this.state.searchTerm}
             onChange={this.handleChange}
             />
-          <button>Search</button>
-        </form>
-        <br></br>
+          <button onClick={this.handleSubmit}>Search</button>
+        </section>
         <GiphysIndex giphys={giphys} handleImg={handleImg} />
       </div>
     );

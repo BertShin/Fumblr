@@ -79,7 +79,7 @@ class PhotoForm extends React.Component {
               className="modal-url"
               type="text"
               value={this.state.image_url}
-              placeholder="....Link to your Photo to share"
+              placeholder="...Link to your Photo to share"
               onChange={(e) => this.handleChange(e, 'image_url')}
               />
 

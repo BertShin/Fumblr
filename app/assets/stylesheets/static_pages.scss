@@ -27,6 +27,8 @@ time, mark, audio, video, button {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	-webkit-font-smoothing: antialiased;
+	border-radius: 2px;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -41,7 +43,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input, textarea, button:focus {
+time, mark, audio, video, input, textarea, button {
 	outline: none;
 }
 
@@ -67,6 +69,10 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
 }
 
 .animated {

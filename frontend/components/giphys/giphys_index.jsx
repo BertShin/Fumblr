@@ -3,7 +3,7 @@ import GiphysIndexItem from './giphys_index_item';
 
 const GiphysIndex = ({giphys, handleImg}) => {
   return (
-    <ul>
+    <ul className="giphy-index">
       { giphys.map(giphy =>
         <GiphysIndexItem
           key={giphy.id}

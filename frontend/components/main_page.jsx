@@ -7,19 +7,18 @@ import TemporaryContainer from './temp_comp_container';
 import FeedIndexContiner from './post/feed_index_container';
 import PostFormContainer from './post/post_form_container';
 
-
 const MainPage = () => (
-  <div>
-    <header>
-      <Switch>
-        <AuthRoute exact path='/' component={SessionFormContainer}/>
-        <AuthRoute exact path='/login' component={SessionFormContainer}/>
-      </Switch>
+  <body>
+    <Switch>
+      <AuthRoute exact path='/' component={SessionFormContainer}/>
+      <AuthRoute exact path='/login' component={SessionFormContainer}/>
+    </Switch>
+    <div>
       <ProtectedRoute path='/dashboard' component={NavBarContainer}/>
       <ProtectedRoute path='/dashboard' component={PostFormContainer}/>
       <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
-    </header>
-  </div>
+    </div>
+  </body>
 );
 // <ProtectedRoute path='/dashboard' component={TemporaryContainer} />
 // <Redirect to="/login"/>

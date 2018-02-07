@@ -12,62 +12,69 @@
 
 .modal {
   display: flex;
-  padding: 5px;
-  width: 50%;
-  top: 20%;
-  left: 25%;
   position: absolute;
+  padding: 5px;
+  width: 60%;
+  max-height: 80%;
+  overflow-y: auto;
+  top: 14%;
+  left: 20%;
   flex-direction: column;
   z-index: 9999;
   background: #FFFF;
   box-shadow: -15px 10px 10px gray;
-  border-radius: 10px;
+  border-radius: 2px;
   border: hidden;
 }
 
 .modal-title {
+  margin-top: 10px;
   padding: 20px;
   font-size: 30px;
   border: hidden;
 }
 
 .modal-content {
-  resize: none;
   height: 200px;
   font-size: 20px;
-  padding-top: 14px;
-  text-indent: 10px;
+  padding: 20px;
   border: hidden;
+  resize: none;
 }
 
 .modal-description {
   margin-top: 1px;
   font-size: 17px;
-  padding: 16px;
+  padding: 20px;
   height: 20px;
   border: hidden;
 }
 
 .modal-buttons {
   display: flex;
+  flex: auto;
   justify-content: space-between;
+  text-align: center;
   align-self: flex-end;
-  width: 120px;
+  width: 160px;
   font-family: Helvetica;
-  margin-right: 5px;
+  margin-right: 25px;
+  margin-bottom: 10px;
 }
 
 .modal-url {
   font-size: 17px;
   height: 20px;
-  padding: 16px;
+  padding: 20px;
   border: hidden;
 }
 
 
 .modal-buttons button {
-  border-radius: 10px;
+  width: 75px;
+  height: 35px;
+  padding: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+  border-radius: 2px;
   cursor: pointer;
-  background-color: $blue;
-  padding: 10px;
 }

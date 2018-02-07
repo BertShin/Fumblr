@@ -13,15 +13,9 @@ const SessionReducer = (state = nullUser, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_USER:
-      if (action.payload) {
-        newState = merge({}, { currentUser: action.payload.username });
-        console.log(action.payload);
-        return newState;
-      } else {
-        newState = merge({}, { currentUser: action.payload });
-        console.log(action.payload);
-        return newState;
-      }
+      newState = merge({}, { currentUser: action.payload });
+      console.log(action.payload);
+      return newState;
     default:
       return state;
   }

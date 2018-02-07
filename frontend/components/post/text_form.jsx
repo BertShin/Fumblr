@@ -62,7 +62,7 @@ class TextForm extends React.Component {
     let contentPhrase;
     let placeHolder;
     if (this.props.content_type === 'Quote') {
-      contentPhrase = "...To Score or Not to Score..";
+      contentPhrase = "...To fumble or Not to fumble..";
       placeHolder = "This Quote's Author";
     } else {
       contentPhrase = "Whats on your Mind??";

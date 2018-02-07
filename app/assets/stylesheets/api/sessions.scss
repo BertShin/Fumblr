@@ -16,9 +16,9 @@
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  height: 900px;
+  flex-grow: auto;
   width: 100%;
-
+  margin-top: 50px;
 }
 
 .selected {
@@ -41,10 +41,10 @@
 .login-logo {
   font-family: 'Faster One', sans-serif;
   text-align: center;
-  height: 120px;
-  font-size: 120px;
+  height: 110px;
+  font-size: 110px;
   color: $blue;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .sub-header {
@@ -63,15 +63,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-content: space-between;
-  height: 380px;
+  height: 400px;
   width: 400px;
   font-family: 'Helvetica';
 }
 
 .session-form input {
-  width: 80%;
-  padding: 18px;
+  width: 75%;
+  padding: 16px;
   text-align: center;
   font-size: 15px;
   font-family: 'Helvetica';
@@ -79,7 +78,7 @@
 
 .session-form button {
   border: hidden;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: $blue;
   width: 63%;
   text-align: center;
@@ -88,10 +87,10 @@
   color: white;
   cursor: pointer;
   padding: 18px;
-  -webkit-transition: background-color 1s ease-out;
-  -moz-transition: background-color 1s ease-out;
-  -o-transition: background-color 1s ease-out;
-  transition: background-color 1s ease-out;
+  -webkit-transition: background-color .8s ease-out;
+  -moz-transition: background-color .8s ease-out;
+  -o-transition: background-color .8s ease-out;
+  transition: background-color .8s ease-out;
 }
 
 .session-form button:hover {
@@ -101,6 +100,7 @@
 
 .errors {
   display: flex;
+  font-weight: 600;
   justify-content: center;
   align-items: center;
   text-align: center;

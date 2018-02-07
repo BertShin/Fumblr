@@ -1,4 +1,64 @@
+.main-giphy-search {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-family: Helvetica;
+}
+
+.main-giphy-search label {
+  font-size: 20px;
+  padding: 5px;
+  color: inherit;
+}
+
+.giphy-search-field {
+  margin-top: 25px;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.giphy-search-field input {
+  border: hidden;
+  border-radius: 2px;
+  font-size: 15px;
+  color: gray;
+  padding: 8px;
+  width: 250px;
+  margin-right: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+}
+
+.giphy-search-field button {
+  text-align: center;
+  cursor: pointer;
+  width: 80px;
+  padding: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+}
+
+.giphy-index {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .giphy-li {
-  display: inline;
-  padding-right: 10px;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.selected-img {
+  display: flex;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.selected-img img:focus {
+  transform: scale(1.1);
 }

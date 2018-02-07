@@ -2,11 +2,17 @@
 @import "../palette.scss";
 
 
-// .mainfadeInUp {
-//   -webkit-animation-name: fadeInUp;
-//   animation-name: fadeInUp;
-//   animation-delay: .3s;
-// }
+.mainfadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  animation-delay: .6s;
+}
+// -webkit-animation-name: fadeInDown;
+// animation-name: fadeInDown;
+// animation-delay: .9s;
+
+.navfadeInDown {
+}
 
 .main-index {
   // border: 3px solid $royal-blue;
@@ -14,39 +20,41 @@
   flex-direction: column-reverse;
   width: 50%;
   margin: 0 auto;
+  z-index: 9989;
 }
 
 
 .feed-index-item {
   // border: 2px solid black;
   display: flex;
+  flex-grow: auto;
   justify-content: space-between;
   font-family: Helvetica;
   width: 99%;
-  border-radius: 4px;
   margin-bottom: 15px;
 }
 
 .content {
-  border: 2px solid gray;
+  // border: 2px solid gray;
   display: flex;
-  margin-right: 35px;
+  margin-right: 20px;
   margin-bottom: 20px;
   flex-direction: column;
-  width: 70%;
-  border-radius: 5px;
-  box-shadow: -5px 5px 10px gray;
+  width: 75%;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
 }
 
 #fii-profile {
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   align-self: flex-start;
-  border-radius: 10px;
+  border-radius: 2px;
   height: 80px;
   width: 80px;
   margin-top: 10px;
   margin-left: 25px;
+  box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
 }
 
 .fii-title {

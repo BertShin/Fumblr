@@ -7,6 +7,7 @@ class NavBar extends React.Component {
     super(props);
 
     this.handleLogout = this.handleLogout.bind(this);
+    this.topFunction = this.topFunction.bind(this);
   }
 
   handleLogout(e) {
@@ -14,12 +15,18 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  topFunction(e) {
+    e.preventDefault();
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
   render () {
     return (
       <div id="main-nav" className="animated navfadeInDown">
         <nav className='left-nav'>
           <ul>
-            <a href="/#"><p>F</p></a>
+            <a onClick={(e) => this.topFunction(e)}><p>F</p></a>
             <span className="fas fa-search"></span>
             <input
               type="text"
