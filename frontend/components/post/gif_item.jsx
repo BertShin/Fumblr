@@ -4,9 +4,12 @@ const GifItem = ({ currentUser, user, post, deletePost }) => {
   return (
     <li className='feed-index-item'>
 
-      <section>
-        <img id="fii-profile" src={user} />
-      </section>
+      { user &&
+        <section>
+          <img id="fii-profile" src={user} />
+        </section>
+      }
+
 
       <section className="content">
         <h1 className='fii-title'>{post.title}</h1>

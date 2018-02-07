@@ -2,6 +2,7 @@ import React from 'react';
 import TextForm from './text_form';
 import PhotoForm from './photo_form';
 import GifForm from './gif_form';
+import CurrentUserPageContainer from '../users/current_user_container';
 import MdText from 'react-icons/lib/md/textsms';
 import FaQuote from "react-icons/lib/fa/quote-right";
 import MdPhoto from "react-icons/lib/md/add-a-photo";
@@ -22,6 +23,10 @@ class PostForm extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   componentWillUnmount() {
@@ -58,6 +63,14 @@ class PostForm extends React.Component {
             onClick={() => this.openModal("userVisible")}
             id="currentUser-profile"
             src={currentUser.image_url} />
+          <Modal
+            isOpen={this.state.userVisible}
+            className="backdrop"
+            >
+            <CurrentUserPageContainer
+              closeModal={() => this.closeModal("userVisible")}
+              />
+          </Modal>
         </section>
         <section className="group-post-buttons">
           <button className="post-buttons"onClick={() => this.openModal("textVisible")}><MdText/> <h4>Text</h4></button>

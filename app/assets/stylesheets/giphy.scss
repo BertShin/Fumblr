@@ -1,3 +1,6 @@
+@import "./palette.scss";
+
+
 .main-giphy-search {
   display: flex;
   flex-direction: column;
@@ -45,20 +48,22 @@
 
 .giphy-li {
   display: inline-block;
-  padding-right: 5px;
+  padding-right: 7px;
 }
 
 .selected-img {
-  display: flex;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: transform;
+  cursor: pointer;
+  // display: inline-block;
+  // vertical-align: middle;
+  // transform: translateZ(0);
+  // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  // backface-visibility: hidden;
+  // -moz-osx-font-smoothing: grayscale;
+  // transition-duration: 0.3s;
+  // transition-property: transform;
 }
 
 .selected-img img:focus {
-  transform: scale(1.1);
+  transform: scale(1.07);
+  border: 6px solid $blue;
 }

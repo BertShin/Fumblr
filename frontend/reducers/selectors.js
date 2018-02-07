@@ -1,5 +1,5 @@
 
-export const getPosts = ({ posts, userId }) => {
+export const getPosts = (posts, userId) => {
   const iPosts = Object.values(posts);
   const desiredPosts = [];
   for (let i = 0; i < iPosts.length; i++) {

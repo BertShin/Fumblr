@@ -25,19 +25,18 @@ class PhotoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const post = this.state;
-    this.props.createPost(post);
-    if (this.props.errors.length === 0) {
-      this.handleClose(e);
-    }
+    this.props.createPost(post).then(() =>  this.handleClose(e));
   }
 
   handleClose(e) {
-    this.setState({
-      title: "",
-      image_url: "",
-      description: ""
-    });
-    this.props.closeModal();
+    if (this.props.errors.length === 0) {
+      this.setState({
+        title: "",
+        content: "",
+        description: "",
+      });
+      this.props.closeModal();
+    }
   }
 
   renderErrors() {
@@ -63,7 +62,7 @@ class PhotoForm extends React.Component {
     } else {
       return (
         <div>
-          <section className="backdrop" onClick={(e) => this.handleClose(e)}></section>
+          <section className="backdrop" onClick={this.props.closeModal}></section>
           <form className="modal">
             {this.renderErrors()}
 
@@ -93,7 +92,7 @@ class PhotoForm extends React.Component {
 
             <section className="modal-buttons">
               <button onClick={(e) => this.handleSubmit(e)}>Post</button>
-              <button onClick={(e) => this.handleClose(e)}>Cancel</button>
+              <button onClick={this.props.closeModal}>Cancel</button>
             </section>
           </form>
         </div>

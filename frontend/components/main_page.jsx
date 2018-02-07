@@ -13,11 +13,9 @@ const MainPage = () => (
       <AuthRoute exact path='/' component={SessionFormContainer}/>
       <AuthRoute exact path='/login' component={SessionFormContainer}/>
     </Switch>
-    <div>
-      <ProtectedRoute path='/dashboard' component={NavBarContainer}/>
-      <ProtectedRoute path='/dashboard' component={PostFormContainer}/>
-      <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
-    </div>
+    <ProtectedRoute path='/dashboard' component={NavBarContainer}/>
+    <ProtectedRoute path='/dashboard' component={PostFormContainer}/>
+    <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
   </body>
 );
 // <ProtectedRoute path='/dashboard' component={TemporaryContainer} />

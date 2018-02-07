@@ -7,7 +7,10 @@ function GiphysIndexItem({giphy, handleImg}) {
       <a className="selected-img">
         <img
           src={giphy.images.fixed_height.url}
+          height={190}
+          width={230}
           onClick={(e) => handleImg(e)}
+          tabIndex={0}
         />
       </a>
     </li>

@@ -21,6 +21,8 @@ class Post < ApplicationRecord
   validates :content_type, inclusion: { in: ["Text", "Photo",
      "Video", "Audio", "GIF", "Link", 'Quote']}
 
+  validates :image_url, presence: true, if: -> {:content_type == ["Photo", "GIF"]}
+
   # after_initialize :assign_user_id
 
   belongs_to :user,
