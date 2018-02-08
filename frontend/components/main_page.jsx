@@ -18,7 +18,6 @@ const MainPage = () => (
     <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
   </section>
 );
-// <ProtectedRoute path='/dashboard' component={TemporaryContainer} />
-// <Redirect to="/login"/>
+
 
 export default MainPage;
