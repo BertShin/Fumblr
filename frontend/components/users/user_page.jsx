@@ -17,24 +17,22 @@ class UserPage extends React.Component {
       return (
         <div>
           <section className="backdrop" onClick={this.props.closeModal}></section>
-          <section className="user-modal">
+          <section className="user-modal animated flipInY">
             <section className="user-backdrop">
               <p>{this.props.username}</p>
               <img
                 src={this.props.image_url}
                 />
             </section>
-            <section className="user-feed">
-              <ul>
-                {
-                  posts.map(post => <UserFeedItem
-                    currentUser={this.props.currentUser}
-                    post={post}
-                    key={post.post_id}
-                    deletePost={deletePost}/>)
-                  }
-                </ul>
-            </section>
+            <ul className="user-feed">
+              {
+                posts.map(post => <UserFeedItem
+                  currentUser={this.props.currentUser}
+                  post={post}
+                  key={post.post_id}
+                  deletePost={deletePost}/>)
+                }
+              </ul>
           </section>
         </div>
       );
