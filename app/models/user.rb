@@ -39,6 +39,7 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
+    self.image_url ||= "https://www.limestone.edu/sites/default/files/user.png"
   end
 
   def reset_session_token!

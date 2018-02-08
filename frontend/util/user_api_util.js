@@ -17,6 +17,6 @@ export const patchUser = (formData) => {
   return $.ajax({
     url: `api/users/${formData.id}`,
     method: 'PATCH',
-    data: {user: formData}
+    data: {user: {image_url: formData.image_url}}
   });
 };

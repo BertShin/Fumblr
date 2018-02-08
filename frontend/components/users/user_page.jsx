@@ -4,7 +4,6 @@ import UserFeedItem from './user_feed_item';
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
 
