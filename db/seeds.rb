@@ -5,7 +5,7 @@ User.create!([
   {username: "MiaHamm", email: "miahamm@gmail.com", session_token: "53uxAYT8fqhri37dul9XnB8", password_digest: "$2a$10$FvpXzGwpqL8ZqPX9OPUDGe0KI/vHrkAmlRo.TA2deo0de2wHGP.72", image_url: "https://static1.squarespace.com/static/52f13ae1e4b08a02b16034fb/t/52fd6734e4b09b324c795621/1392338742015/Mia_Hamm.jpg?format=2500w"},
   {username: "BertShin", email: "bertshin@gmail.com", session_token: "SBUbOXxR9tCuzaKH5jhsaNE", password_digest: "$2a$10$WzH3D5ftUJUtRyi4K.KJZONGOYfEtYaM976M1amxE/QKa6I8e93zu", image_url: "https://pbs.twimg.com/profile_images/950664597366714369/M4PmYTBN.jpg"}
   ])
-  
+
 Post.create!([
   {title: "The person that said winning isn’t everything", user_id: 1, description: "Mia Hamm", image_url: nil, likes: nil, content: "never won anything", content_type: "Quote"},
   {title: "Still one of the best dunks of all time!", user_id: 2, description: "By KB The GOAT", image_url: "https://media.giphy.com/media/VvZSI1pH1b2Ra/giphy.gif", likes: nil, content: nil, content_type: "Text"},
@@ -14,7 +14,7 @@ Post.create!([
   {title: "Check this sick MJ gif!", user_id: 2, description: "Who did dis", image_url: "https://media.giphy.com/media/zAYZOtH5OMhuU/giphy.gif", likes: nil, content: nil, content_type: "Text"},
   {title: "Funniest thing I've seen all day LOL", user_id: 2, description: nil, image_url: "https://media.giphy.com/media/xT9IguGd9sn4dIbaiQ/giphy.gif", likes: nil, content: nil, content_type: "Text"},
   {title: "Me when I'm on a roll at work", user_id: 2, description: nil, image_url: "https://media.giphy.com/media/3otPorZ08nPuaZfoeA/giphy.gif", likes: nil, content: nil, content_type: "Text"},
-  {title: "I don't want to be Michael Jordan...", user_id: 2, description: nil, image_url: nil, likes: nil, content: "I don't want to be Michael Jordan, I want to be Kobe Bryant", content_type: "Quote"},
+  {title: "I don't want to be Michael Jordan...", user_id: 2, description: "Kobe Bryant", image_url: nil, likes: nil, content: "I don't want to be Michael Jordan, I want to be Kobe Bryant", content_type: "Quote"},
   {title: "Seriously what debate is there?", user_id: 2, description: nil, image_url: nil, likes: nil, content: "Why is there such a debate between who's the GOAT? Kobe is obviously the goat.. #PplgottaRecognize #5>6 #24>23", content_type: "Text"},
   {title: "startin young~", user_id: 3, description: "", image_url: "https://static1.squarespace.com/static/54b4319ee4b02eb93428f3d1/54b5a090e4b0bb2b0191e74c/54b68851e4b05e2e7fb7fb31/1421248595522/project-play-young-girl-baseball-pitcher.jpg", likes: nil, content: nil, content_type: "Photo"},
   {title: "Classic Matchup", user_id: 3, description: "Red Vs Blue", image_url: "http://cdn.playbuzz.com/cdn/ee99c687-7a57-4c9b-bcd7-c70357122916/d3a4eb82-d74f-45dd-8e3e-915e10ac2b07.jpg", likes: nil, content: nil, content_type: "Photo"},
