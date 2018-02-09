@@ -29,14 +29,6 @@
 
 * Using this free API, every time the `ScorePanel` is rendered, an `$.ajax` request is made to the API to retrieve the current scores for the desired sport. Using some logic, I was able to allow the user to click the arrows and change the date which then triggers a re-rendering of the new date's current scores.
 
-`  handleBack(e) {
-    e.preventDefault();
-    const numDate = parseInt(this.state.desiredDate);
-    const backDate = (numDate - 1).toString();
-    this.setState({ desiredDate: backDate });
-    }
-`
-
 ![Alt text](app/photos/SportHub.png)
 
 ***
