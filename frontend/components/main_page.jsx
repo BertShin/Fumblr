@@ -6,6 +6,7 @@ import NavBarContainer from './navbar/navbar_container';
 import FeedIndexContiner from './post/feed_index_container';
 import PostFormContainer from './post/post_form_container';
 import ScoreIndexContainer from './score/score_index_container';
+import MainPagePersonalPlugs from './main_page_plugs';
 
 const MainPage = () => (
   <section>
@@ -18,6 +19,7 @@ const MainPage = () => (
       <ProtectedRoute path='/dashboard' component={PostFormContainer}/>
       <ProtectedRoute path='/dashboard' component={FeedIndexContiner}/>
       <ProtectedRoute path='/dashboard' component={ScoreIndexContainer}/>
+      <ProtectedRoute path='/dashboard' component={MainPagePersonalPlugs}/>
     </section>
   </section>
 );

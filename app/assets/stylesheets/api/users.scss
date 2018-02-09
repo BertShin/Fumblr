@@ -1,3 +1,38 @@
 // Place all the styles related to the api/Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "../palette.scss";
+
+
+.main-plug2 {
+  display: flex;
+  position: fixed;
+  bottom: 45px;
+  align-self: flex-start;
+  align-items: flex-end;
+  width: 60px;
+  height: 100px;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.main-plug2 a {
+  color: $blue;
+  font-size: 40px;
+  -webkit-transition: color .6s ease-in;
+  -moz-transition: color .6s ease-in;
+  -o-transition: color .6s ease-in;
+  transition: color .6s ease-in;
+}
+
+.main-plug2 a:hover {
+  color: $orange;
+}
+
+#angel2 {
+  height: 37px;
+  width: 40px;
+  padding-left: 5px;
+}

@@ -19,15 +19,14 @@
 }
 
 
-
 .main-post-form {
   // border: 5px solid $blue-green;
   z-index: 9899;
   display: flex;
   justify-content: flex-end;
-  margin-top: 7%;
+  margin-top: 6.5%;
   margin-bottom: 2%;
-  margin-left: 19%;
+  margin-left: 20%;
   height: 120px;
   width: 51%;
   text-align: center;
@@ -124,6 +123,7 @@
 
 .post-buttons h4 {
   font-family: Helvetica;
+  font-weight: 600;
   color: $orange;
   font-size: 18px;
   align-self: center;

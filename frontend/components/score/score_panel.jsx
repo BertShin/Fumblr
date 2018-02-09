@@ -45,8 +45,14 @@ class ScoreIndex extends React.Component {
     this.selectTab = this.selectTab.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleForward = this.handleForward.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
 
   componentDidMount () {
     this.props.fetchGameData("nba", this.props.desiredDate);

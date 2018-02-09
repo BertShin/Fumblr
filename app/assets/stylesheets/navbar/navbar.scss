@@ -21,10 +21,10 @@
   top: 0px;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 65px;
   z-index: 9800;
   background-color: $blue;
-  box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
+  box-shadow: 2px 1px 5px 1px rgba(0,0,0,.6);
 }
 
 .left-nav > ul,
@@ -47,7 +47,7 @@
 
 .fa-search {
   position: absolute;
-  top: 31px;
+  top: 24px;
   font-size: 20px;
   left: 93px;
   color: gray;
@@ -85,13 +85,24 @@
 }
 
 .right-nav a {
-  height: 65px;
-  width: 50px;
-  background-size: 48px 54px;
+  height: 40px;
+  width: 40px;
+  background-size: 40px 40px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
 
+.right-nav a:hover {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .right-nav button {
@@ -104,37 +115,53 @@
   margin: 10px;
   cursor: pointer;
   background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-elements/700/012_power-512.png");
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
-.right-nav a:hover {
-
+.right-nav button:hover {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 
 
 #nba {
-  background-image: url("https://www.underconsideration.com/brandnew/archives/nba_logo_before_after.png");
-  display: inline-block;
-  height: 60px;
-  width: 31px;
-  background-size: 210px 71px;
-  background-position: -37px -5px;
-  border: hidden;
-  padding: 0px;
-  margin-right: 10px;
-  border-radius: 6px;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/515JQjBBBvL.png");
+  // display: inline-block;
+  // height: 60px;
+  // width: 31px;
+  // background-size: 210px 71px;
+  // background-position: -37px -5px;
+  // border: hidden;
+  // padding: 0px;
+  // margin-right: 10px;
+  // border-radius: 6px;
 }
 
 #nfl {
   background-image: url("https://vignette.wikia.nocookie.net/looneytunes/images/4/49/NFL-logo.png/revision/latest?cb=20140711021414");
 }
 
+#mlb {
+  background-image : url("https://cdn.bleacherreport.net/images/team_logos/328x328/mlb.png");
+  // background-image : url("https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Major_League_Baseball_logo.svg/1200px-Major_League_Baseball_logo.svg.png");
+  background-size: 45px 65px;
+}
+
 #tennis {
-  background-image: url("https://ccsu.co.uk/asset/Organisation/6469/tennis-logo.png?thumbnail_width=270&thumbnail_height=370&resize_type=ResizeFitAll");
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/USTA_logo.svg/1200px-USTA_logo.svg.png");
+  // background-image: url("https://ccsu.co.uk/asset/Organisation/6469/tennis-logo.png?thumbnail_width=270&thumbnail_height=370&resize_type=ResizeFitAll");
 }
 
 #soccer {
-  background-image: url("https://openclipart.org/image/800px/svg_to_png/241330/Soccer-Logo.png");
+  background-image: url("http://worldsoccertalk.com/wp-content/uploads/2015/05/fifa-logo.png");
+  // background-image: url("https://openclipart.org/image/800px/svg_to_png/241330/Soccer-Logo.png");
 }
 
 #tumblr {
