@@ -103,21 +103,20 @@ class ScoreIndex extends React.Component {
           chosenTab={this.selectTab}
           leagues={leagues}>
         </Leagues>
-        <div className='tab-content'>
-          <ul>
+          <ul className='tab-content'>
+            <li>{this.props.desiredDate}</li>
             {
               league.content.map(match =>
                 <ScoreIndexItem
                   key={match.game.ID}
                   awayScore={match.awayScore}
                   homeScore={match.homeScore}
-                  awayTeam={match.game.awayTeam.Name}
-                  homeTeam={match.game.homeTeam.Name}
+                  awayTeam={match.game.awayTeam.Abbreviation}
+                  homeTeam={match.game.homeTeam.Abbreviation}
                   time={match.game.time}
                 />)
             }
           </ul>
-        </div>
       </div>
     );
   }

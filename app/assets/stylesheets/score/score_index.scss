@@ -2,11 +2,11 @@
 
 
 .main-score-index {
+  display: inline-block;
   position: fixed;
   right: 3%;
   top: 13.5%;
-  // height: 600px;
-  height: calc(100vh - 170px);
+  height: 80vh;
   width: 340px;
   border: 2px solid black;
   // align-self: flex-end;
@@ -52,15 +52,33 @@
 }
 
 .tab-content {
-  display: flex;
-  flex-direction: row;
+  font-family: Helvetica;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: 93%;
 }
 
-.tab-content article {
-  text-align: center;
+.tab-content li {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid black;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  height: 70px;
+  line-height: 1;
+}
+
+.tab-content h1 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.match-results {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
