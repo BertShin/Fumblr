@@ -29,7 +29,7 @@
 
 ***
 
-#Posts (with Giphy API)
+# Posts (with Giphy API)
 
 * Again, Fümblr allows users to post text posts such as statuses or whatever may be on the user's mind as well as empowering, funny, or any variety of quotes authored by famous sports idols such as Serena Williams or of the user. My focus was to allow users to share what is viral in the sports world (such as topics on reddit.com/r/sport_name) so all of the posts may contain links to memes or gifs.
   * Users may choose from one of four Post types:
