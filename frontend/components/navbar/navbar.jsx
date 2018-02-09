@@ -36,8 +36,8 @@ class NavBar extends React.Component {
         </nav>
         <nav className='right-nav'>
           <ul>
-            <a target="_blank" id="soccer" href='http://www.espn.com/soccer/scoreboard'></a>
-            <a target="_blank" id="tennis" href='http://www.tennis.com/scores/#/?_k=dyqsz8'></a>
+            <a target="_blank" id="soccer" href='http://www.fifa.com/womens-football/index.html'></a>
+            <a target="_blank" id="tennis" href='https://www.usta.com/en/home.html'></a>
             <a target="_blank" id="mlb" href='https://www.mlb.com/'></a>
             <a target="_blank" id="nfl" href='https://www.nfl.com/'></a>
             <a target="_blank" id="nba" href='http://nba.com'></a>
