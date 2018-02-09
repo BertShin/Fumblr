@@ -1,14 +1,25 @@
 import React from 'react';
 
 
-function ScoreIndexItem({awayScore, homeScore, awayTeam, homeTeam, time}) {
+function ScoreIndexItem({ isCompleted, awayScore, homeScore, awayTeam, homeTeam, time}) {
+  let status;
+  if (isCompleted) {
+    status = 'FINAL';
+  } else {
+    status = time;
+  }
   return(
     <li>
-      <h1>{time}</h1>
-      <section className="match-results">
-      <p>{awayTeam}:  {awayScore}</p>
-      <br></br>
-      <p>{homeTeam}:  {homeScore}</p>
+      <section className="game-status">
+        <h1>{status}</h1>
+      </section>
+      <section className="away-team">
+        <h2>{awayTeam}</h2>
+        <h3>{awayScore}</h3>
+      </section>
+      <section className="home-team">
+        <h2>{homeTeam}</h2>
+        <h3>{homeScore}</h3>
       </section>
     </li>
   );

@@ -69,35 +69,28 @@ class ScoreIndex extends React.Component {
       {title: 'NFL', content: [
         {awayScore: "",
           homeScore: "",
-          game: {time: "CONGRATS TO THE EAGLES THIS SEASON", ID: "500", awayTeam: {Name: ""},
+          game: {time: "*CONGRATS TO THE EAGLES THIS SEASON*", ID: "500", awayTeam: {Name: "Next Season Starts September 6th."},
           homeTeam:
           {Name: ""}}}
       ]},
       {title: 'MLB', content: [
         {awayScore: "",
           homeScore: "",
-          game: {time: "CONGRATS TO THE ASTROS THIS SEASON", ID: "501", awayTeam: {Name: ""},
+          game: {time: "*CONGRATS TO THE ASTROS THIS SEASON*", ID: "501", awayTeam: {Name: "Next Season Starts March 29th."},
           homeTeam:
           {Name: ""}}}
       ]},
       {title: 'TEN', content: [
         {awayScore: "",
           homeScore: "",
-          game: {time: "CONGRATS TO FEDERER", ID: "502", awayTeam: {Name: ""},
-          homeTeam:
-          {Name: ""}}}
-      ]},
-      {title: 'SOC', content: [
-        {awayScore: "",
-          homeScore: "",
-          game: {time: "CONGRATS TO FEDERER", ID: "503", awayTeam: {Name: ""},
+          game: {time: "CONGRATS TO FEDERER FOR THE AUSTRALIAN OPEN,", ID: "502", awayTeam: {Name: "No Tennis Data :( QQ "},
           homeTeam:
           {Name: ""}}}
       ]}
     ];
     let league = leagues[this.state.selectedTab];
     return (
-      <div className="main-score-index">
+      <div className="main-score-index animated flipInY">
         <Leagues
           selectedTab={this.state.selectedTab}
           chosenTab={this.selectTab}
@@ -111,9 +104,10 @@ class ScoreIndex extends React.Component {
                   key={match.game.ID}
                   awayScore={match.awayScore}
                   homeScore={match.homeScore}
-                  awayTeam={match.game.awayTeam.Abbreviation}
-                  homeTeam={match.game.homeTeam.Abbreviation}
+                  awayTeam={match.game.awayTeam.Name}
+                  homeTeam={match.game.homeTeam.Name}
                   time={match.game.time}
+                  isCompleted={match.isCompleted}
                 />)
             }
           </ul>

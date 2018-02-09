@@ -4,13 +4,8 @@ export const fetchGame = (sport, forDate) => {
     url: `https://api.mysportsfeeds.com/v1.2/pull/${sport}/2016-2017-regular/scoreboard.json?fordate=${forDate}`,
     method: 'GET',
     headers: {
-      "Authorization": "Basic " + btoa("BertShin" + ":" + "Vannil1a")
+      "Authorization": "Basic " + btoa("Student" + ":" + "AmazingPW")
     },
     dataType: 'json',
   });
 };
-
-
-// Example fordate //
-// 20170402
-// YearMMDD //
