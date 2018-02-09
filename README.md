@@ -14,7 +14,7 @@
 * NavBar with links to major sports websites
 * Current User's show page displaying all of their own posts
 
-  * ![alt text] (app/photos/UserPage.png)
+  * ![alt text] (/app/photos/UserPage.png)
 
 * A feed of all users and their posts
 * A SportsHub with Real-Time Scores
