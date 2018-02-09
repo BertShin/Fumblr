@@ -1,0 +1,66 @@
+@import "../palette.scss";
+
+
+.main-score-index {
+  position: fixed;
+  right: 3%;
+  top: 13.5%;
+  // height: 600px;
+  height: calc(100vh - 170px);
+  width: 340px;
+  border: 2px solid black;
+  // align-self: flex-end;
+}
+
+.tab-header {
+  width: 340px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-header > li{
+  background-color: $blue;
+  padding-top: 6px;
+  width: 67px;
+  border-top: 2px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 2px solid black;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab-header > li:first-child{
+  border-left: 2px solid black;
+}
+
+.tab-header > li:last-child{
+  border-right: 2px solid black;
+}
+
+.tab-header > li:hover{
+  background-color: $orange;
+  color: $blue;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.tab-content article {
+  text-align: center;
+}

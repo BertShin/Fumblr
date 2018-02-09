@@ -18,6 +18,21 @@
 .navfadeInDown {
 }
 
+
+
+.main-post-form {
+  // border: 5px solid $blue-green;
+  z-index: 9899;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 7%;
+  margin-bottom: 2%;
+  margin-left: 19%;
+  height: 120px;
+  width: 51%;
+  text-align: center;
+}
+
 #currentUser-profile {
   cursor: pointer;
   display: flex;
@@ -29,20 +44,6 @@
   height: 90px;
   width: 90px;
   box-shadow: 0 1.5px 5px 1px rgba(0,0,0,.5);
-}
-
-
-.main-post-form {
-  // border: 5px solid $blue-green;
-  z-index: 9899;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 7%;
-  margin-bottom: 2%;
-  margin-left: 22%;
-  height: 125px;
-  width: 51%;
-  text-align: center;
 }
 
 .group-post-buttons {
