@@ -14,7 +14,7 @@
 * NavBar with links to major sports websites
 * Current User's show page displaying all of their own posts
 
-  * ![alt text] (/app/photos/UserPage.png)
+  * ![Alt text](/Users/BertShin/Desktop/Fumblr/app/photos/UserPage.png)
 
 * A feed of all users and their posts
 * A SportsHub with Real-Time Scores
@@ -25,7 +25,7 @@
 
 * My application is unique from tumblr because of its Real-time sports API which displays scores for Major Sports leagues. However, currently it is a free api, therefore I am unable to access the array of sports and various data I would like to display (such as the WNBA, Womens Soccer, Tennis). Also, because it is currently a free API, only scores that are not of the current year may be displayed.
 
-![alt text] (app/photos/SportHub.png)
+![Alt text](app/photos/SportHub.png)
 
 ***
 
@@ -38,5 +38,5 @@
     * A Photo post which is formatted differently so the photo is highlighted within the post and not their title.
     * Finally a GIF post which utilizes a gif search API (powered by Giphy) so that users may choose to their liking.
 
-![alt text] (app/photos/Post.png)
-![alt text] (app/photos/Giphy.png)
+![Alt text](app/photos/Post.png)
+![Alt text](app/photos/Giphy.png)
