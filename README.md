@@ -1,6 +1,6 @@
 # Fümblr
 
-[Fümblr] (https://fumblrr.herokuapp.com/)
+[Fümblr](https://fumblrr.herokuapp.com/)
 
 * Fümblr is a Full-Stack application that utilizes a React-Redux front end and a Postgresql, Ruby on Rails backend! This application was built and implemented from scratch within a 10 day deadline. My route for this project was atypical because I did not copy tumblr's design nor did I do a pixel perfect clone of their website. I chose to take my own route and design/style it to my own liking. Hope you enjoy!!
 
