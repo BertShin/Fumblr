@@ -25,10 +25,14 @@ const mapStateToProps = (state, ownProps) => {
 
   let year = (date.getFullYear() - 1).toString();
   const desiredDate = year + month + day;
-  
+  const displayDate = month + "/" + day + "/" + year;
   return ({
     scores: state.score,
-    desiredDate: desiredDate
+    desiredDate: desiredDate,
+    displayDate: displayDate,
+    month: month,
+    day: day,
+    year: year
   });
 };
 

@@ -38,9 +38,13 @@ class ScoreIndex extends React.Component {
 
     this.state = {
       selectedTab: 0,
+      desiredDate: this.props.desiredDate,
+      displayDate: this.props.displayDate,
     };
 
     this.selectTab = this.selectTab.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+    this.handleForward = this.handleForward.bind(this);
   }
 
 
@@ -61,32 +65,57 @@ class ScoreIndex extends React.Component {
     this.setState({selectedTab: num});
   }
 
+
+  handleBack(e) {
+    e.preventDefault();
+    const numDate = parseInt(this.state.desiredDate);
+    const backDate = (numDate - 1).toString();
+    this.setState({ desiredDate: backDate });
+
+    let year = backDate.slice(0, 4);
+    let month = backDate.slice(4, 6);
+    let day = backDate.slice(6, 8);
+
+    let newDate = month + '/' + day + '/' + year;
+    this.setState({displayDate: newDate});
+
+    this.props.fetchGameData("nba", backDate);
+  }
+
+  handleForward(e) {
+    e.preventDefault();
+    const numDate = parseInt(this.state.desiredDate);
+    const forwardDate = (numDate + 1).toString();
+    this.setState({ desiredDate: forwardDate});
+
+    let year = forwardDate.slice(0, 4);
+    let month = forwardDate.slice(4, 6);
+    let day = forwardDate.slice(6, 8);
+
+    let newDate = month + '/' + day + '/' + year;
+    this.setState({displayDate: newDate});
+
+    this.props.fetchGameData("nba", forwardDate);
+  }
+
   render () {
     let { scores } = this.props;
-
     const leagues = [
-      {title: 'NBA', content: scores},
-      {title: 'NFL', content: [
+      {title: <i className="fas fa-basketball-ball"></i>, content: scores},
+      {title: <i className="fas fa-football-ball"></i>, content: [
         {awayScore: "",
           homeScore: "",
           game: {time: "*CONGRATS TO THE EAGLES THIS SEASON*", ID: "500", awayTeam: {Name: "Next Season Starts September 6th."},
           homeTeam:
           {Name: ""}}}
       ]},
-      {title: 'MLB', content: [
+      {title: <i className="fas fa-baseball-ball"></i>, content: [
         {awayScore: "",
           homeScore: "",
           game: {time: "*CONGRATS TO THE ASTROS THIS SEASON*", ID: "501", awayTeam: {Name: "Next Season Starts March 29th."},
           homeTeam:
           {Name: ""}}}
       ]},
-      {title: 'TEN', content: [
-        {awayScore: "",
-          homeScore: "",
-          game: {time: "CONGRATS TO FEDERER FOR THE AUSTRALIAN OPEN,", ID: "502", awayTeam: {Name: "No Tennis Data :( QQ "},
-          homeTeam:
-          {Name: ""}}}
-      ]}
     ];
     let league = leagues[this.state.selectedTab];
     return (
@@ -94,10 +123,17 @@ class ScoreIndex extends React.Component {
         <Leagues
           selectedTab={this.state.selectedTab}
           chosenTab={this.selectTab}
-          leagues={leagues}>
+          leagues={leagues}
+          desiredDate={this.props.desiredDate}
+          fetchGameData={this.props.fetchGameData}
+          >
         </Leagues>
           <ul className='tab-content'>
-            <li>{this.props.desiredDate}</li>
+            <li id="current-date">
+              <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
+              <span>{this.state.displayDate}</span>
+              <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
+            </li>
             {
               league.content.map(match =>
                 <ScoreIndexItem

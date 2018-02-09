@@ -16,7 +16,7 @@ class UserPage extends React.Component {
       return (
         <div>
           <section className="backdrop" onClick={this.props.closeModal}></section>
-          <section className="user-modal animated flipInY">
+          <section className="user-modal animated fadeInLeft">
             <section className="user-backdrop">
               <p>{this.props.username}</p>
               <img
