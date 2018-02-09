@@ -27,6 +27,24 @@
   box-shadow: 2px 1px 5px 1px rgba(0,0,0,.6);
 }
 
+@keyframes color-change {
+  0% {
+    color: #FF9F1C;
+  }
+  25% {
+    color: #FFBF69;
+  }
+  50% {
+    color: #FFFFFF;
+  }
+  75% {
+    color: #CBF3F0;
+  }
+  100% {
+    color: #2EC4B6;
+  }
+}
+
 .left-nav > ul,
 .right-nav > ul {
   display: flex;
@@ -75,9 +93,9 @@
 }
 
 .left-nav P:hover {
-  color: $orange;
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  animation: color-change 1.5s infinite;
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .right-nav {

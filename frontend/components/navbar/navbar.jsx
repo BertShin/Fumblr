@@ -21,17 +21,18 @@ class NavBar extends React.Component {
     document.documentElement.scrollTop = 0;
   }
 
+  // <span className="fas fa-search"></span>
+  // <input
+  //   type="text"
+  //   placeholder="Nothing to Search Yet!"
+  //   />
+
   render () {
     return (
       <div id="main-nav" className="animated navfadeInDown">
         <nav className='left-nav'>
           <ul>
-            <a onClick={(e) => this.topFunction(e)}><p>F</p></a>
-            <span className="fas fa-search"></span>
-            <input
-              type="text"
-              placeholder="Nothing to Search Yet!"
-              />
+            <a onClick={(e) => this.topFunction(e)}><p>fümblr</p></a>
           </ul>
         </nav>
         <nav className='right-nav'>
