@@ -59,6 +59,15 @@
   cursor: pointer;
   font-size: 25px;
   color: $blue;
+  -webkit-transition: color .25s ease-out;
+  -moz-transition: color .25s ease-out;
+  -o-transition: color .25s ease-out;
+  transition: color .25s ease-out;
+}
+
+
+.tab-header > li:hover{
+  color: $orange;
 }
 
 // .tab-header > li:first-child{
@@ -68,11 +77,6 @@
 // .tab-header > li:last-child{
 //   border-right: 2px solid gray;
 // }
-
-.tab-header > li:hover{
-  background-color: $blue;
-  color: $orange;
-}
 
 .active {
   font-weight: bold;
