@@ -40,7 +40,6 @@ class ScoreIndex extends React.Component {
     this.state = {
       selectedTab: 0,
       desiredDate: this.props.desiredDate,
-      displayDate: this.props.displayDate,
       loading: true
     };
 
@@ -57,12 +56,7 @@ class ScoreIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.setState({loading :true});
-    this.props.fetchGameData("nba", this.props.desiredDate).then(
-      this.setState({
-        loading: false
-      })
-    );
+    this.props.fetchGameData("nba", this.props.desiredDate);
     // Logic for when more than one sport is in season.
     // const allSports = ["nba", nfl", "mlb"];
     // all sports are currently out of season except NBA
@@ -83,15 +77,6 @@ class ScoreIndex extends React.Component {
     e.preventDefault();
     const numDate = parseInt(this.state.desiredDate);
     const backDate = (numDate - 1).toString();
-    this.setState({ desiredDate: backDate });
-
-    let year = backDate.slice(0, 4);
-    let month = backDate.slice(4, 6);
-    let day = backDate.slice(6, 8);
-
-    let newDate = month + '/' + day + '/' + year;
-    this.setState({displayDate: newDate});
-
     this.props.fetchGameData("nba", backDate);
   }
 
@@ -99,20 +84,13 @@ class ScoreIndex extends React.Component {
     e.preventDefault();
     const numDate = parseInt(this.state.desiredDate);
     const forwardDate = (numDate + 1).toString();
-    this.setState({ desiredDate: forwardDate});
-
-    let year = forwardDate.slice(0, 4);
-    let month = forwardDate.slice(4, 6);
-    let day = forwardDate.slice(6, 8);
-
-    let newDate = month + '/' + day + '/' + year;
-    this.setState({displayDate: newDate});
-
     this.props.fetchGameData("nba", forwardDate);
   }
 
   render () {
     let { scores } = this.props;
+
+    // PlaceHolder Data until RealTime API is utilized
     const leagues = [
       {title: <i className="fas fa-basketball-ball"></i>, content: scores},
       {title: <i className="fas fa-football-ball"></i>, content: [
@@ -131,18 +109,7 @@ class ScoreIndex extends React.Component {
       ]},
     ];
     let league = leagues[this.state.selectedTab];
-    if (this.state.loading) {
-      return (
-        <div className="tab-content">
-          <li>
-            <RingLoader
-              color={'rgba(53, 154, 255, 1)'}
-            />
-          </li>
-        </div>
-      );
-    } else {
-      return (
+    return (
         <div className="main-score-index animated flipInY">
           <Leagues
             selectedTab={this.state.selectedTab}
@@ -155,7 +122,6 @@ class ScoreIndex extends React.Component {
           <ul className='tab-content'>
             <li id="current-date">
               <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
-              <span>{this.state.displayDate}</span>
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
             {
@@ -168,12 +134,12 @@ class ScoreIndex extends React.Component {
                   homeTeam={match.game.homeTeam.Name}
                   time={match.game.time}
                   isCompleted={match.isCompleted}
+                  date={match.game.date}
                   />)
                 }
               </ul>
             </div>
-        );
-      }
+    );
   }
 }
 

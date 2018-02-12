@@ -84,7 +84,7 @@
 }
 
 #current-date {
-  font-size: 22px;
+  font-size: 32px;
   height: 50px;
   text-align: center;
   padding-top: 10px;
@@ -99,6 +99,18 @@
 #current-date button {
   cursor: pointer;
   color: $orange;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+#current-date button:hover {
+  color: $blue;
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 #current-date > button, span {
@@ -146,4 +158,9 @@
 
 .tab-content > li:last-child {
   border-bottom: none;
+}
+
+.game-date {
+  font-size: 15px;
+  color: gray;
 }

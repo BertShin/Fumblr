@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ScoreIndexItem({ isCompleted, awayScore, homeScore, awayTeam, homeTeam, time}) {
+function ScoreIndexItem({ date, isCompleted, awayScore, homeScore, awayTeam, homeTeam, time}) {
   let status;
   if (isCompleted) {
     status = 'FINAL';
@@ -12,6 +12,7 @@ function ScoreIndexItem({ isCompleted, awayScore, homeScore, awayTeam, homeTeam,
     <li>
       <section className="game-status">
         <h1>{status}</h1>
+        <h1 className="game-date">{date}</h1>
       </section>
       <section className="away-team">
         <h2>{awayTeam}</h2>

@@ -6,7 +6,7 @@ class GiphySearch extends React.Component {
   constructor(props) {
     super();
 
-    this.state = { searchTerm: "Funny Sport" };
+    this.state = { searchTerm: "Sports Fail" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
