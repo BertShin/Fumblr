@@ -122,6 +122,7 @@ class ScoreIndex extends React.Component {
           <ul className='tab-content'>
             <li id="current-date">
               <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
+              <input type='date'/>
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
             {
