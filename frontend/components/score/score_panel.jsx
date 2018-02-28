@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import ScoreIndexItem from './score_index_item';
 import { RingLoader } from 'react-spinners';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 class Leagues extends React.Component {
   render () {
@@ -40,7 +42,8 @@ class ScoreIndex extends React.Component {
     this.state = {
       selectedTab: 0,
       desiredDate: this.props.desiredDate,
-      loading: true
+      loading: true,
+      date: moment()
     };
 
     this.selectTab = this.selectTab.bind(this);
@@ -122,7 +125,9 @@ class ScoreIndex extends React.Component {
           <ul className='tab-content'>
             <li id="current-date">
               <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
-              <input type='date'/>
+              <DatePicker
+                selected={this.state.date}
+              />
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
             {
