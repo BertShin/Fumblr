@@ -4,36 +4,7 @@ import ScoreIndexItem from './score_index_item';
 import { RingLoader } from 'react-spinners';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-
-class Leagues extends React.Component {
-  render () {
-    let isSelected = this.props.selectedTab;
-    let headers = this.props.leagues.map( (league, index) => {
-      let title = league.title;
-      let currentClass = '';
-      if (index === isSelected) {
-        currentClass = 'active';
-      }
-
-      return (
-        <li
-          key={index}
-          className={currentClass}
-          onClick={this.props.chosenTab.bind(null, index)}>
-          {title}{' '}
-        </li>
-      );
-    });
-
-    return (
-      <ul className='tab-header'>
-        {headers}
-      </ul>
-    );
-  }
-
-}
-
+import Leagues from './leagues';
 
 class ScoreIndex extends React.Component {
   constructor(props) {
