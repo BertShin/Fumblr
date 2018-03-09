@@ -43,10 +43,9 @@ class ScoreIndex extends React.Component {
     e.preventDefault();
     
     let date = new Date(moment(this.state.desiredDate)._d);
-    // Okay SO im getting a date object now WITH the correct date(2017)
-    console.log(date);
-    let year = date.getFullYear();
+    date.setDate(date.getDate() - 1);
 
+    let year = date.getFullYear();
     let month = ((date.getMonth() + 1).toString());
     month = month.length > 1 ? month : '0' + month;
     let day = date.getDate().toString();
@@ -59,15 +58,34 @@ class ScoreIndex extends React.Component {
       desiredDate: newDate,
       displayDate: newDisplay
     });
+
     console.log(this.state.desiredDate);
     this.props.fetchGameData("nba", newDate);
   }
 
   handleForward(e) {
     e.preventDefault();
-    const numDate = parseInt(this.state.desiredDate);
-    const forwardDate = (numDate + 1).toString();
-    this.props.fetchGameData("nba", forwardDate);
+    
+    let date = new Date(moment(this.state.desiredDate)._d);
+    date.setDate(date.getDate() + 1);
+
+    let year = date.getFullYear();
+    let month = ((date.getMonth() + 1).toString());
+    month = month.length > 1 ? month : '0' + month;
+    let day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+
+    let newDate = year + month + day;
+    let newDisplay = month + "/" + day + "/" + year;
+
+    this.setState({
+      desiredDate: newDate,
+      displayDate: newDisplay
+    });
+
+    console.log(this.state.displayDate);
+    this.props.fetchGameData("nba", newDate);
+
   }
 
   render () {
@@ -107,7 +125,7 @@ class ScoreIndex extends React.Component {
           <ul className='tab-content'>
             <li id="current-date">
               <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
-              <p>{this.props.displayDate}</p>
+              <p>{this.state.displayDate}</p>
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
             {
