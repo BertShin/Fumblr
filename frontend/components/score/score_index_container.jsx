@@ -9,23 +9,19 @@ const mapStateToProps = (state, ownProps) => {
   // any year but the current year, Therefore need logic to first grab
   // the correct parameter for the API call and make sure its from the
   // previous year.
-  const date = new Date();
-  let day = date.getDate();
-  let month = date.getMonth();
+  let date = new Date();
+  date.setDate(date.getDate() - 365);
 
-  if (month < 10 || day < 10) {
-    month = (date.getMonth() + 1).toString();
-    month = "0" + month;
-    day = (date.getDate()).toString();
-    day = "0" + day;
-  } else {
-    month = (date.getMonth() + 1).toString();
-    day = (date.getDate()).toString();
-  }
+  let year = date.getFullYear();
 
-  let year = (date.getFullYear() - 1).toString();
-  const desiredDate = year + month + day;
-  const displayDate = month + "/" + day + "/" + year;
+  let month = ((date.getMonth() + 1).toString());
+    month = month.length > 1 ? month : '0' + month;
+  let day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+  
+  let desiredDate = year + month + day;
+  let displayDate = month + "/" + day + "/" + year;
+
   return ({
     scores: state.score,
     desiredDate: desiredDate,
