@@ -1,14 +1,4 @@
-
-
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Faster+One|Mukta+Mahee|Sniglet|Sriracha|Text+Me+One');
-
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -82,9 +72,17 @@ body {
 	overflow: auto;
 }
 
+// MODAL
+
 .ReactModal__Body--open {
   overflow-y: hidden;
 }
+
+// Animations
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
 .animated {
   -webkit-animation-duration: 1s;
