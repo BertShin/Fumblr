@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.loginSpeed = 110;
+    this.loginSpeed = 80;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -78,6 +78,7 @@ class SessionForm extends React.Component {
     let formType = this.props.formType;
     let linkType;
     let message;
+
     if (formType === 'Sign Up') {
       linkType = "/login";
       message = "Logging In or Try a Demo?";
@@ -85,10 +86,11 @@ class SessionForm extends React.Component {
       linkType = "/";
       message = "Need an Account? Sign Up!";
     }
+
     return (
       <div className="main-session">
 
-        { setTimeout(function(){
+        { setTimeout(() => {
           document.getElementById("myVideo").play();
           }, 1900) &&
           <video id="myVideo" loop>

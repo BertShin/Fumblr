@@ -41,8 +41,8 @@
 .login-logo {
   font-family: 'Faster One', sans-serif;
   text-align: center;
-  height: 110px;
-  font-size: 110px;
+  height: 17vh;
+  font-size: 17vh;
   color: $blue;
   margin-left: 25px;
 }
@@ -50,7 +50,7 @@
 .sub-header {
   font-family: 'Helvetica';
   height: 40px;
-  font-size: 25px;
+  font-size: 4vh;
   font-weight: 700;
   color: $blue;
   text-align: center;
@@ -63,8 +63,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
-  width: 400px;
+  height: 60vh;
+  width: 30vw;
   font-family: 'Helvetica';
 }
 
@@ -87,10 +87,10 @@
   color: white;
   cursor: pointer;
   padding: 18px;
-  -webkit-transition: background-color .8s ease-out;
-  -moz-transition: background-color .8s ease-out;
-  -o-transition: background-color .8s ease-out;
-  transition: background-color .8s ease-out;
+  -webkit-transition: background-color .5s ease-out;
+  -moz-transition: background-color .5s ease-out;
+  -o-transition: background-color .5s ease-out;
+  transition: background-color .5s ease-out;
 }
 
 .session-form button:hover {
@@ -108,34 +108,28 @@
   color: red;
 }
 
-#demo {
-}
-
-
-
 //////////// Personal Plugs /////////
 
 .main-plug {
   display: flex;
   position: fixed;
-  bottom: 50px;
+  bottom: 5vh;
   align-self: flex-start;
   align-items: flex-end;
-  width: 250px;
-  height: 80px;
-  border-radius: 10px;
+  width: 20vw;
+  height: 5vh;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-left: 40px;
+  margin-left: 2vw;
 }
 
 .main-plug a {
   color: $blue;
-  font-size: 70px;
-  -webkit-transition: color 1s ease-in;
-  -moz-transition: color 1s ease-in;
-  -o-transition: color 1s ease-in;
-  transition: color 1s ease-in;
+  font-size: 10vh;
+  -webkit-transition: color .5s ease-in;
+  -moz-transition: color .5s ease-in;
+  -o-transition: color .5s ease-in;
+  transition: color .5s ease-in;
 }
 
 .main-plug a:hover {
@@ -143,6 +137,5 @@
 }
 
 #angel {
-  height: 70px;
-  width: 60px;
+  font-size: 9vh;
 }
