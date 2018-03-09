@@ -56,7 +56,7 @@
 }
 
 #current-date {
-  font-size: 32px;
+  font-size: 4.5vh;
   height: 50px;
   text-align: center;
   padding-top: 10px;
@@ -64,7 +64,9 @@
 }
 
 #current-date span {
-  color: gray;
+  color: $dark-indigo;
+  margin-top: .5vh;
+  font-size: 3.5vh;
   padding-top: 6px;
 }
 
