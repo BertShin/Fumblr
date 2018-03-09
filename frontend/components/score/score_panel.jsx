@@ -13,20 +13,13 @@ class ScoreIndex extends React.Component {
     this.state = {
       selectedTab: 0,
       desiredDate: this.props.desiredDate,
+      displayDate: this.props.displayDate,
       loading: true,
-      date: moment()
     };
 
     this.selectTab = this.selectTab.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleForward = this.handleForward.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(date) {
-    this.setState({
-      startDate: date
-    });
   }
 
   componentDidMount () {
@@ -46,12 +39,28 @@ class ScoreIndex extends React.Component {
     this.setState({selectedTab: num});
   }
 
-
   handleBack(e) {
     e.preventDefault();
-    const numDate = parseInt(this.state.desiredDate);
-    const backDate = (numDate - 1).toString();
-    this.props.fetchGameData("nba", backDate);
+    
+    let date = new Date(moment(this.state.desiredDate)._d);
+    // Okay SO im getting a date object now WITH the correct date(2017)
+    console.log(date);
+    let year = date.getFullYear();
+
+    let month = ((date.getMonth() + 1).toString());
+    month = month.length > 1 ? month : '0' + month;
+    let day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+    
+    let newDate = year + month + day;
+    let newDisplay = month + "/" + day + "/" + year;
+
+    this.setState({
+      desiredDate: newDate,
+      displayDate: newDisplay
+    });
+    console.log(this.state.desiredDate);
+    this.props.fetchGameData("nba", newDate);
   }
 
   handleForward(e) {
@@ -82,7 +91,9 @@ class ScoreIndex extends React.Component {
           {Name: ""}}}
       ]},
     ];
+
     let league = leagues[this.state.selectedTab];
+
     return (
         <div className="main-score-index animated flipInY">
           <Leagues
@@ -96,9 +107,7 @@ class ScoreIndex extends React.Component {
           <ul className='tab-content'>
             <li id="current-date">
               <button onClick={this.handleBack}><i className="fas fa-chevron-circle-left"></i></button>
-              <DatePicker
-                selected={this.state.date}
-              />
+              <p>{this.props.displayDate}</p>
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
             {
