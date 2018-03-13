@@ -10,8 +10,10 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       username: "",
-      password: ""
+      password: "",
+      hasAnimated: false
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginSpeed = 80;
@@ -56,6 +58,18 @@ class SessionForm extends React.Component {
     typing();
   }
 
+  renderVideo() {
+    if (this.state.hasAnimated === false) {
+      return (
+        setTimeout(() => {
+          document.getElementById("myVideo").play();
+        }, 1900) &&
+        <video id="myVideo" loop>
+          <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
+        </video>
+      );
+    }
+  }
 
   renderErrors() {
     if (this.props.errors === null) {
@@ -90,13 +104,7 @@ class SessionForm extends React.Component {
     return (
       <div className="main-session">
 
-        { setTimeout(() => {
-          document.getElementById("myVideo").play();
-          }, 1900) &&
-          <video id="myVideo" loop>
-            <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
-          </video>
-        }
+        {this.renderVideo()}
 
         <h1 className="login-logo animated rollIn">fümblr.</h1>
         <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>

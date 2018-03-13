@@ -1,5 +1,4 @@
 import React from 'react';
-// Make a whole new container and plug it in here?? //
 
 const TextItem = ({post, user, currentUser, deletePost}) => {
   return (
