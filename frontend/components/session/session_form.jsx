@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, NavLink } from 'react-router-dom';
+import InputForm from './input_form';
 import PersonalPlugs from '../personal_plugs';
 
 
@@ -7,16 +7,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      email: "",
-      username: "",
-      password: "",
-      hasAnimated: false
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.loginSpeed = 80;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,50 +16,15 @@ class SessionForm extends React.Component {
     }
   }
 
-  handleChange(e, type) {
-    this.setState({ [type]: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-  }
-
-  handleGuest(e) {
-    e.preventDefault();
-    this.demoLogin("username", "SerenaWilliams", (
-      () => this.demoLogin("password", 'hopetheyhireme', (
-        () => this.props.processForm(this.state)
-      ))
-    ));
-  }
-
-  demoLogin(field, DemoUser, cb) {
-    let textToType = "";
-    const typing = () => {
-      textToType = DemoUser.substring(0, textToType.length + 1);
-      this.setState({ [field]: textToType });
-      if (textToType.length === DemoUser.length) {
-        setTimeout(() => cb(), this.loginSpeed);
-      } else {
-        setTimeout(() => typing(), this.loginSpeed);
-      }
-    };
-    typing();
-  }
-
   renderVideo() {
-    if (this.state.hasAnimated === false) {
-      return (
-        setTimeout(() => {
-          document.getElementById("myVideo").play();
-        }, 1900) &&
-        <video id="myVideo" loop>
-          <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
-        </video>
-      );
-    }
+    return (
+      setTimeout(() => {
+        document.getElementById("myVideo").play();
+      }, 1900) &&
+      <video id="myVideo" loop>
+        <source src="http://res.cloudinary.com/bertshin/video/upload/v1517533652/Basketball_-_12609_tniwpg.mp4" type='video/mp4' />
+      </video>
+    );
   }
 
   renderErrors() {
@@ -89,17 +45,9 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let formType = this.props.formType;
+    let { formType, clearAllErrors, processForm } = this.props;
     let linkType;
     let message;
-
-    if (formType === 'Sign Up') {
-      linkType = "/login";
-      message = "Logging In or Try a Demo?";
-    } else {
-      linkType = "/";
-      message = "Need an Account? Sign Up!";
-    }
 
     return (
       <div className="main-session">
@@ -108,46 +56,18 @@ class SessionForm extends React.Component {
 
         <h1 className="login-logo animated rollIn">fümblr.</h1>
         <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>
-        <form className="session-form animated fadeInDown" onSubmit={(e) => this.handleSubmit(e)}>
-          {this.renderErrors()}
-          <br></br>
-          { formType === 'Sign Up' &&
-              <input
-                className='email'
-                type="text"
-                value={this.state.email}
-                onChange={(e) => this.handleChange(e, 'email')}
-                placeholder="Email"
-                />
-          }
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={(e) => this.handleChange(e, 'username')}
-            placeholder="Username"
-            />
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={(e) => this.handleChange(e, 'password')}
-            placeholder="Password"
-            />
-          <br></br>
-          <br></br>
-          <button>{formType}</button>
-          <br></br>
-          { formType === 'Log In' &&
-            <button id="demo" onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
-          }
-          <br></br>
-          <br></br>
-          <NavLink
-            className="selected"
-            onClick={this.props.clearAllErrors()}
-            exact
-            to={linkType}
-            >{message}</NavLink>
-        </form>
+        
+        <InputForm 
+          formType={formType}
+          linkType={linkType}
+          message={message}
+          handleChange={this.handleChange}
+          handleGuest={this.handleGuest}
+          handleSubmit={this.handleSubmit}
+          processForm={processForm}
+          clearAllErrors={clearAllErrors}
+          renderErrors={this.renderErrors}
+        />
         <PersonalPlugs />
       </div>
     );
