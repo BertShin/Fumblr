@@ -9,7 +9,7 @@ const PersonalPlugs = () => {
     <div className="main-plug animated fadeIn">
       <a
         target="_blank"
-        href="https://github.com/BertShin">
+        href="https://github.com/BertShin/Fumblr">
         <FaGitHubSquare />
       </a>
       <a
