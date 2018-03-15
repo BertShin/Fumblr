@@ -5,25 +5,19 @@
 .mainfadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-  animation-delay: .6s;
+  animation-delay: .5s;
 }
-// -webkit-animation-name: fadeInDown;
-// animation-name: fadeInDown;
-// animation-delay: .9s;
-
 
 .main-index {
-  // border: 3px solid $royal-blue;
   display: flex;
   flex-direction: column-reverse;
-  width: 50%;
+  width: 50vw;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
-  margin-right: 27%;
-  z-index: 9989;
+  margin-right: 27vw;
+  z-index: 90;
 }
-
 
 .feed-index-item {
   // border: 2px solid black;
@@ -41,7 +35,7 @@
   margin-right: 20px;
   margin-bottom: 20px;
   flex-direction: column;
-  width: 75%;
+  width: 35.7vw;
   border-radius: 2px;
   box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
 }
@@ -51,10 +45,10 @@
   display: flex;
   align-self: flex-start;
   border-radius: 2px;
-  height: 80px;
-  width: 80px;
+  height: 13vh;
+  width: 6.5vw;
   margin-top: 10px;
-  margin-left: 25px;
+  margin-left: 1.5vw;
   box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
 }
 

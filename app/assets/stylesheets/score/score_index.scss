@@ -13,6 +13,7 @@
   font-family: Helvetica;
   display: inline-block;
   position: fixed;
+  border: none;
   right: 3%;
   top: 14.5%;
   height: 69vh;
@@ -66,8 +67,8 @@
 #current-date span {
   color: $dark-indigo;
   margin-top: .5vh;
-  font-size: 3.5vh;
-  padding-top: 6px;
+  font-size: 20px;
+  padding-top: 10px;
 }
 
 #current-date button {

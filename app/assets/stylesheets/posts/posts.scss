@@ -21,36 +21,36 @@
 
 .main-post-form {
   // border: 5px solid $blue-green;
-  z-index: 9899;
+  z-index: 80;
   display: flex;
-  justify-content: flex-end;
-  margin-top: 6.5%;
+  justify-content: space-between;
+  margin-top: 14vh;
   margin-bottom: 2%;
   margin-left: 20%;
-  height: 120px;
-  width: 51%;
+  height: 20vh;
+  width: 51vw;
   text-align: center;
 }
 
 #currentUser-profile {
+  // border: 1px solid black;
   cursor: pointer;
   display: flex;
   margin-left: 20px;
   margin-right: 50px;
   margin-top: 10px;
-  // border: 1px solid black;
   border-radius: 2px;
-  height: 90px;
-  width: 90px;
+  height: 15vh;
+  width: 7vw;
   box-shadow: 0 1.5px 5px 1px rgba(0,0,0,.5);
 }
 
 .group-post-buttons {
+  // border: 2px solid gray;
   display: flex;
   justify-content: space-around;
   margin-top: 5px;
   width: 90%;
-  // border: 2px solid gray;
   box-shadow: 0 1.5px 5px 1px rgba(0,0,0,.5);
   border-radius: 2px;
   overflow: hidden;
@@ -62,14 +62,10 @@
   flex-direction: column;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 4.5vw;
   color: $blue;
   padding: 17px;
   text-align: center;
-  // -webkit-transition: color 1s ease-out;
-  // -moz-transition: color 1s ease-out;
-  // -o-transition: color 1s ease-out;
-  // transition: color 1s ease-out;
   vertical-align: middle;
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -101,8 +97,8 @@
 }
 
 .gif-button svg {
-  width: 85px;
-  height: 60px;
+  width: 7vw;
+  height: 10vh;
 }
 
 #powered {

@@ -20,9 +20,9 @@
   position: fixed;
   top: 0px;
   align-items: center;
-  width: 100%;
-  height: 65px;
-  z-index: 9800;
+  width: 100vw;
+  height: 11vh;
+  z-index: 100;
   background-color: $blue;
   box-shadow: 2px 1px 5px 1px rgba(0,0,0,.6);
 }
@@ -119,8 +119,8 @@
 }
 
 .right-nav a:hover {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .right-nav button {
@@ -143,8 +143,8 @@
 }
 
 .right-nav button:hover {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 
