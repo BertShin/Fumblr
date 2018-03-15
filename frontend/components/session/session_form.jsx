@@ -56,6 +56,7 @@ class SessionForm extends React.Component {
 
         <h1 className="login-logo animated rollIn">fümblr.</h1>
         <h3 className="sub-header animated zoomInLeft"> Your HQ for Everything Sports </h3>
+        
         <InputForm 
           formType={formType}
           linkType={linkType}

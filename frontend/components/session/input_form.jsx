@@ -63,20 +63,20 @@ class InputForm extends React.Component {
             linkType = "/";
             message = "Need an Account? Sign Up!";
         }
-
+    
         return (
             <form className="session-form animated fadeInDown" onSubmit={(e) => this.handleSubmit(e)}>
                 {this.props.renderErrors()}
-                <br></br>
+
                 {this.props.formType === 'Sign Up' &&
                     <input
-                        className='email'
                         type="text"
                         value={this.state.email}
                         onChange={(e) => this.handleChange(e, 'email')}
                         placeholder="Email"
                     />
                 }
+
                 <input
                     type="text"
                     value={this.state.username}
@@ -89,15 +89,12 @@ class InputForm extends React.Component {
                     onChange={(e) => this.handleChange(e, 'password')}
                     placeholder="Password"
                 />
-                <br></br>
-                <br></br>
-                <button>{this.props.formType}</button>
-                <br></br>
+
+                <button className="first-session-button">{this.props.formType}</button>
                 {this.props.formType === 'Log In' &&
-                    <button id="demo" onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
+                    <button onClick={(e) => this.handleGuest(e)}>Try a Demo</button>
                 }
-                <br></br>
-                <br></br>
+                
                 <NavLink
                     className="selected"
                     onClick={this.props.clearAllErrors()}
