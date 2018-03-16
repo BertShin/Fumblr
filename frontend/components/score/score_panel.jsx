@@ -133,11 +133,13 @@ class ScoreIndex extends React.Component {
               <span>{this.state.displayDate}</span>
               <button onClick={this.handleForward}><i className="fas fa-chevron-circle-right"></i></button>
             </li>
-            <RingLoader
-              color={'rgba(53, 154, 255, 1)'}
-              loading={this.state.loading}
-              size={60}
-            />
+            <div className="loader">
+              <RingLoader
+                color={'rgba(53, 154, 255, 1)'}
+                loading={this.state.loading}
+                size={80}
+              />
+            </div>
           </ul>
         </div>
       );
