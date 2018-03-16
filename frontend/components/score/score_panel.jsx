@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import ScoreIndexItem from './score_index_item';
-import { RingLoader } from 'react-spinners';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import Leagues from './leagues';
@@ -13,8 +12,7 @@ class ScoreIndex extends React.Component {
     this.state = {
       selectedTab: 0,
       desiredDate: this.props.desiredDate,
-      displayDate: this.props.displayDate,
-      loading: true,
+      displayDate: this.props.displayDate
     };
 
     this.selectTab = this.selectTab.bind(this);
@@ -27,6 +25,7 @@ class ScoreIndex extends React.Component {
     // Logic for when more than one sport is in season.
     // const allSports = ["nba", nfl", "mlb"];
     // all sports are currently out of season except NBA
+    // Also no data for other sports as of now.
     // for (let i = 0; i < allSports.length; i++ ) {
     //   console.logg(this.props.fetchGameData);
     //   this.setState({
@@ -83,9 +82,7 @@ class ScoreIndex extends React.Component {
       displayDate: newDisplay
     });
 
-    console.log(this.state.displayDate);
     this.props.fetchGameData("nba", newDate);
-
   }
 
   render () {

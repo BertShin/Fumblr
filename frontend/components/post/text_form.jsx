@@ -107,13 +107,4 @@ class TextForm extends React.Component {
   }
 }
 
-// { this.props.content_type === "Text" &&
-//   <input
-//     className="modal-url"
-//     type="text"
-//     value={this.state.image_url}
-//     placeholder="Attach an IMG or GIF?"
-//     onChange={(e) => this.handleChange(e, 'image_url')}
-//     />
-// }
 export default TextForm;
