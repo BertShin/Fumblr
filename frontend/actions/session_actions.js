@@ -3,18 +3,11 @@ import * as SessionAPIUtil from "../util/session_api_util";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-// export const LOGOUT_USER = 'LOGOUT_USER';
-
 
 const receiveCurrentUser = currentUser => ({
   type: RECEIVE_USER,
   payload: currentUser
 });
-// must review
-// const logoutUser = () => ({
-//   type: LOGOUT_USER,
-//   payload: null
-// });
 
 const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
