@@ -9,6 +9,8 @@ import { fetchGameData } from "./actions/score_actions";
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   let store;
+
+  // Current User
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
@@ -16,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+
+  // Modal
   Modal.setAppElement(root);
-  // Dev Testing //
-  window.store = store;
-  window.fetchGame = fetchGame;
+
   ReactDOM.render(<Root store={store}/>, root);
 });
