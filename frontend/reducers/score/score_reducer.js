@@ -1,8 +1,6 @@
 import merge from 'lodash/merge';
 import { FETCH_GAME_DATA } from '../../actions/score_actions';
 
-
-
 const ScoreReducer = (state = [], action) => {
   Object.freeze(state);
   let newState;
