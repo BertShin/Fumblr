@@ -1,15 +1,12 @@
-import React from 'react';
-import GiphysIndexItem from './giphys_index_item';
+import React from "react";
+import GiphysIndexItem from "./giphys_index_item";
 
-const GiphysIndex = ({giphys, handleImg}) => {
+const GiphysIndex = ({ giphys, handleImg }) => {
   return (
     <ul className="giphy-index">
-      { giphys.map(giphy =>
-        <GiphysIndexItem
-          key={giphy.id}
-          giphy={giphy}
-          handleImg={handleImg}
-        />)}
+      {giphys.map(giphy => (
+        <GiphysIndexItem key={giphy.id} giphy={giphy} handleImg={handleImg} />
+      ))}
     </ul>
   );
 };

@@ -12,23 +12,19 @@ const TextItem = ({post, user, currentUser, deletePost}) => {
 
       <section className="content">
         <h1 className='fii-title'>{post.title}</h1>
-        { post.image_url &&
-          <img
-            className="fii-text-img"
-            src={post.image_url}
-            />
+        {post.image_url &&
+          <img className="fii-text-img" src={post.image_url} />
         }
-        { post.content !== "" &&
+        {post.content !== "" &&
           <p className="fii-text-content">{post.content}</p>
         }
-        { post.description !== "" &&
+        {post.description !== "" &&
           <h1 className='fii-description'>{post.description}</h1>
         }
         <section className="fii-buttons">
-          { currentUser === post.user_id &&
-            <button
-              onClick={() => deletePost(post.post_id)}
-              >Delete Post
+          {currentUser === post.user_id &&
+            <button onClick={() => deletePost(post.post_id)}>
+              Delete Post
             </button>
           }
         </section>

@@ -34,11 +34,7 @@ class GiphySearch extends React.Component {
     return (
       <div className="main-giphy-search">
         <section className='giphy-search-field'>
-          <input
-            type="text"
-            placeholder={this.state.searchTerm}
-            onChange={this.handleChange}
-            />
+          <input type="text" placeholder={this.state.searchTerm} onChange={this.handleChange} />
           <button onClick={this.handleSubmit}>Search</button>
         </section>
         <GiphysIndex giphys={giphys} handleImg={handleImg} />

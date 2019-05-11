@@ -19,9 +19,7 @@ class UserPage extends React.Component {
           <section className="user-modal animated fadeInLeft">
             <section className="user-backdrop">
               <p>{this.props.username}</p>
-              <img
-                src={this.props.image_url}
-                />
+              <img src={this.props.image_url}/>
             </section>
             <ul className="user-feed">
               {

@@ -62,7 +62,6 @@ class ScoreIndex extends React.Component {
       loading: true
     });
 
-    console.log(this.state.desiredDate);
     this.props.fetchGameData("nba", newDate)
     .then(() => this.setState({ loading: false}));
   }
@@ -88,8 +87,7 @@ class ScoreIndex extends React.Component {
       loading: true
     });
 
-    this.props.fetchGameData("nba", newDate)
-    .then(() => this.setState({ loading: false}));
+    this.props.fetchGameData("nba", newDate).then(() => this.setState({ loading: false}));
   }
 
   render () {
